@@ -1,35 +1,1683 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Web Projects</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <style>
-    body { font-family: 'Inter', sans-serif; }
-    .card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(124,58,237,0.15); }
-    .card { transition: all 0.3s ease; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Funngro - India's #1 platform connecting teens with real companies. Earn real money, build skills, and get work experience while still in school. Featured on Shark Tank India.">
+    <meta name="keywords" content="Funngro, teen jobs India, internships for teens, earn money as teenager, Shark Tank India, teen entrepreneurship, student jobs, part time jobs for students India">
+    <meta name="author" content="Funngro">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Funngro - Teens Earn Real Money from Real Companies">
+    <meta property="og:description" content="Join 2 lakh+ teens who are earning, learning and growing with India's top companies. No experience needed.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.funngro.com">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Funngro - Teens Earn Real Money from Real Companies">
+    <meta name="twitter:description" content="Join 2 lakh+ teens earning real money from real companies. Featured on Shark Tank India.">
+    <title>Funngro - Teens Earn Real Money from Real Companies | Shark Tank India</title>
+    <link rel="canonical" href="https://www.funngro.com">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        neon: '#C4F542',
+                        neonDark: '#A8D635',
+                        dark: '#0A0A0A',
+                        darkCard: '#141414',
+                        darkBorder: '#1E1E1E',
+                        darkMuted: '#888888',
+                        teenPurple: '#8B5CF6',
+                        teenBlue: '#3B82F6',
+                        compOrange: '#F97316',
+                        compPink: '#EC4899',
+                    },
+                    fontFamily: {
+                        display: ['Space Grotesk', 'sans-serif'],
+                        body: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; background: #0A0A0A; color: #fff; overflow-x: hidden; }
+
+        ::selection { background: #C4F542; color: #0A0A0A; }
+
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #0A0A0A; }
+        ::-webkit-scrollbar-thumb { background: #C4F542; border-radius: 3px; }
+
+        .page { display: none; }
+        .page.active { display: block; }
+
+        .neon-glow { text-shadow: 0 0 40px rgba(196, 245, 66, 0.3); }
+        .neon-box-glow { box-shadow: 0 0 30px rgba(196, 245, 66, 0.15), 0 0 60px rgba(196, 245, 66, 0.05); }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #C4F542 0%, #A8D635 50%, #7CB318 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .gradient-text-purple {
+            background: linear-gradient(135deg, #8B5CF6, #3B82F6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .gradient-text-orange {
+            background: linear-gradient(135deg, #F97316, #EC4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .btn-neon {
+            background: #C4F542;
+            color: #0A0A0A;
+            font-weight: 700;
+            padding: 14px 32px;
+            border-radius: 12px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        .btn-neon:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(196, 245, 66, 0.4); }
+        .btn-neon:active { transform: translateY(0); }
+
+        .btn-outline {
+            background: transparent;
+            color: #fff;
+            font-weight: 600;
+            padding: 14px 32px;
+            border-radius: 12px;
+            border: 2px solid #1E1E1E;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+        .btn-outline:hover { border-color: #C4F542; color: #C4F542; }
+
+        .card-dark {
+            background: #141414;
+            border: 1px solid #1E1E1E;
+            border-radius: 20px;
+            padding: 32px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card-dark:hover { border-color: #333; transform: translateY(-4px); box-shadow: 0 20px 40px rgba(0,0,0,0.3); }
+
+        .card-teen {
+            background: linear-gradient(145deg, #141414, #1a1028);
+            border: 1px solid #2a1f4a;
+            border-radius: 20px;
+            padding: 32px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card-teen:hover { border-color: #8B5CF6; transform: translateY(-4px); box-shadow: 0 20px 40px rgba(139, 92, 246, 0.15); }
+
+        .card-company {
+            background: linear-gradient(145deg, #141414, #1f1510);
+            border: 1px solid #3a2a1a;
+            border-radius: 20px;
+            padding: 32px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card-company:hover { border-color: #F97316; transform: translateY(-4px); box-shadow: 0 20px 40px rgba(249, 115, 22, 0.15); }
+
+        .floating { animation: float 6s ease-in-out infinite; }
+        .floating-delay { animation: float 6s ease-in-out 2s infinite; }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-in { animation: fadeInUp 0.8s ease forwards; }
+        .delay-1 { animation-delay: 0.1s; opacity: 0; }
+        .delay-2 { animation-delay: 0.2s; opacity: 0; }
+        .delay-3 { animation-delay: 0.3s; opacity: 0; }
+        .delay-4 { animation-delay: 0.4s; opacity: 0; }
+        .delay-5 { animation-delay: 0.5s; opacity: 0; }
+
+        @keyframes pulse-neon {
+            0%, 100% { box-shadow: 0 0 20px rgba(196, 245, 66, 0.2); }
+            50% { box-shadow: 0 0 40px rgba(196, 245, 66, 0.4); }
+        }
+        .pulse-neon { animation: pulse-neon 3s ease-in-out infinite; }
+
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .marquee-track { animation: marquee 30s linear infinite; }
+        .marquee-track:hover { animation-play-state: paused; }
+
+        .hero-bg-grid {
+            background-image:
+                linear-gradient(rgba(196, 245, 66, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(196, 245, 66, 0.03) 1px, transparent 1px);
+            background-size: 60px 60px;
+        }
+
+        .hero-radial {
+            background: radial-gradient(ellipse at 50% 0%, rgba(196, 245, 66, 0.08) 0%, transparent 60%);
+        }
+
+        .teen-radial {
+            background: radial-gradient(ellipse at 30% 0%, rgba(139, 92, 246, 0.1) 0%, transparent 60%),
+                        radial-gradient(ellipse at 70% 100%, rgba(59, 130, 246, 0.06) 0%, transparent 50%);
+        }
+
+        .company-radial {
+            background: radial-gradient(ellipse at 70% 0%, rgba(249, 115, 22, 0.1) 0%, transparent 60%),
+                        radial-gradient(ellipse at 30% 100%, rgba(236, 72, 153, 0.06) 0%, transparent 50%);
+        }
+
+        .stat-number {
+            font-variant-numeric: tabular-nums;
+        }
+
+        .nav-link { position: relative; }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #C4F542;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after, .nav-link.active::after { width: 100%; }
+
+        .shark-tank-badge {
+            background: linear-gradient(135deg, rgba(196, 245, 66, 0.1), rgba(196, 245, 66, 0.05));
+            border: 1px solid rgba(196, 245, 66, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .testimonial-card {
+            background: linear-gradient(145deg, #141414, #181818);
+            border: 1px solid #1E1E1E;
+            border-radius: 20px;
+            padding: 28px;
+        }
+
+        .step-connector {
+            width: 2px;
+            height: 40px;
+            background: linear-gradient(to bottom, #8B5CF6, #3B82F6);
+            margin: 0 auto;
+        }
+
+        .step-connector-orange {
+            width: 2px;
+            height: 40px;
+            background: linear-gradient(to bottom, #F97316, #EC4899);
+            margin: 0 auto;
+        }
+
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+        }
+        .mobile-menu.open { transform: translateX(0); }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.4s ease;
+        }
+        .faq-item.open .faq-answer { max-height: 300px; padding-top: 12px; }
+        .faq-item.open .faq-icon { transform: rotate(45deg); }
+        .faq-icon { transition: transform 0.3s ease; }
+
+        .counter { display: inline-block; }
+
+        @keyframes shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+        .shimmer {
+            background: linear-gradient(90deg, transparent 0%, rgba(196,245,66,0.08) 50%, transparent 100%);
+            background-size: 200% 100%;
+            animation: shimmer 3s ease infinite;
+        }
+
+        .blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.4;
+            pointer-events: none;
+        }
+
+        .tab-btn { transition: all 0.3s ease; }
+        .tab-btn.active-teen { background: rgba(139, 92, 246, 0.2); color: #8B5CF6; border-color: #8B5CF6; }
+        .tab-btn.active-company { background: rgba(249, 115, 22, 0.2); color: #F97316; border-color: #F97316; }
+
+        .trust-logo {
+            filter: grayscale(100%) brightness(0.6);
+            transition: filter 0.3s ease;
+        }
+        .trust-logo:hover { filter: grayscale(0%) brightness(1); }
+    </style>
 </head>
-<body class="min-h-screen bg-[#030303] text-zinc-100">
-  <div class="max-w-5xl mx-auto px-6 py-20">
-    <h1 class="text-4xl font-extrabold text-white mb-4">My Web Projects</h1>
-    <p class="text-zinc-400 text-lg mb-12">Static HTML samples deployed via GitHub Pages.</p>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-      <a href="alex-mercer-cfo/" class="card block rounded-2xl bg-zinc-950 border border-zinc-800 p-8 hover:border-violet-600/60">
-        <div class="text-xs font-bold text-violet-400 tracking-wider uppercase mb-3">Sample 01</div>
-        <h2 class="text-xl font-bold text-white mb-2">Alex Mercer CFO</h2>
-        <p class="text-sm text-zinc-400 mb-6">Chief Financial Officer portfolio and professional profile page.</p>
-        <span class="text-xs font-semibold text-violet-400">View Live →</span>
-      </a>
-      <a href="aether-platform/" class="card block rounded-2xl bg-zinc-950 border border-zinc-800 p-8 hover:border-violet-600/60">
-        <div class="text-xs font-bold text-violet-400 tracking-wider uppercase mb-3">Sample 02</div>
-        <h2 class="text-xl font-bold text-white mb-2">Aether Platform</h2>
-        <p class="text-sm text-zinc-400 mb-6">Stateful AI orchestration platform landing page with interactive terminal and pricing.</p>
-        <span class="text-xs font-semibold text-violet-400">View Live →</span>
-      </a>
+<body>
+<!-- Sample Navigation Bar -->
+<div style="position:fixed;top:0;left:0;right:0;z-index:99999;background:rgba(0,0,0,0.9);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,0.1);padding:10px 20px;display:flex;justify-content:center;gap:12px;font-family:Inter,system-ui,sans-serif;">
+  <a href="./" style="padding:6px 16px;border-radius:6px;font-size:12px;font-weight:600;text-decoration:none;background:rgba(124,58,237,0.2);color:#a78bfa;border:1px solid rgba(124,58,237,0.4);">Funngro</a>
+  <a href="alex-mercer-cfo/" style="padding:6px 16px;border-radius:6px;font-size:12px;font-weight:600;text-decoration:none;color:#a1a1aa;border:1px solid rgba(255,255,255,0.1);transition:all 0.2s;" onmouseover="this.style.borderColor='rgba(124,58,237,0.4)';this.style.color='#e4e4e7'" onmouseout="this.style.borderColor='rgba(255,255,255,0.1)';this.style.color='#a1a1aa'">Alex Mercer CFO</a>
+  <a href="aether-platform/" style="padding:6px 16px;border-radius:6px;font-size:12px;font-weight:600;text-decoration:none;color:#a1a1aa;border:1px solid rgba(255,255,255,0.1);transition:all 0.2s;" onmouseover="this.style.borderColor='rgba(124,58,237,0.4)';this.style.color='#e4e4e7'" onmouseout="this.style.borderColor='rgba(255,255,255,0.1)';this.style.color='#a1a1aa'">Aether Platform</a>
+</div>
+<!-- End Navigation -->
+
+<!-- Navigation -->
+<nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" style="background: rgba(10,10,10,0.8); backdrop-filter: blur(20px); border-bottom: 1px solid transparent;">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+        <a href="#" onclick="showPage('home')" class="flex items-center gap-2">
+            <div class="w-10 h-10 rounded-xl bg-neon flex items-center justify-center">
+                <span class="text-dark font-display font-bold text-xl">F</span>
+            </div>
+            <span class="font-display font-bold text-2xl tracking-tight">Funngro</span>
+        </a>
+
+        <div class="hidden md:flex items-center gap-8">
+            <a href="#" onclick="showPage('home')" class="nav-link text-sm font-medium text-white/70 hover:text-white transition-colors active" id="nav-home">Home</a>
+            <a href="#" onclick="showPage('teens')" class="nav-link text-sm font-medium text-white/70 hover:text-white transition-colors" id="nav-teens">For Teens</a>
+            <a href="#" onclick="showPage('companies')" class="nav-link text-sm font-medium text-white/70 hover:text-white transition-colors" id="nav-companies">For Companies</a>
+            <a href="#how-it-works" class="nav-link text-sm font-medium text-white/70 hover:text-white transition-colors" onclick="showPage('home')">How It Works</a>
+            <a href="#testimonials" class="nav-link text-sm font-medium text-white/70 hover:text-white transition-colors" onclick="showPage('home')">Reviews</a>
+        </div>
+
+        <div class="hidden md:flex items-center gap-3">
+            <button class="btn-outline text-sm !py-2.5 !px-5">Log In</button>
+            <button class="btn-neon text-sm !py-2.5 !px-5 !rounded-lg">Get Started Free</button>
+        </div>
+
+        <button id="mobile-toggle" class="md:hidden text-white text-xl" onclick="toggleMobileMenu()">
+            <i class="fas fa-bars"></i>
+        </button>
     </div>
-  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div id="mobile-menu" class="mobile-menu fixed top-0 right-0 w-80 h-full z-50 bg-darkCard border-l border-darkBorder p-8 flex flex-col">
+    <div class="flex justify-between items-center mb-10">
+        <span class="font-display font-bold text-xl">Menu</span>
+        <button onclick="toggleMobileMenu()" class="text-white text-xl"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="flex flex-col gap-6">
+        <a href="#" onclick="showPage('home'); toggleMobileMenu();" class="text-lg font-medium hover:text-neon transition-colors">Home</a>
+        <a href="#" onclick="showPage('teens'); toggleMobileMenu();" class="text-lg font-medium hover:text-neon transition-colors">For Teens</a>
+        <a href="#" onclick="showPage('companies'); toggleMobileMenu();" class="text-lg font-medium hover:text-neon transition-colors">For Companies</a>
+        <a href="#" onclick="showPage('home'); toggleMobileMenu();" class="text-lg font-medium hover:text-neon transition-colors">How It Works</a>
+        <a href="#" onclick="showPage('home'); toggleMobileMenu();" class="text-lg font-medium hover:text-neon transition-colors">Reviews</a>
+    </div>
+    <div class="mt-auto flex flex-col gap-3">
+        <button class="btn-outline w-full text-sm">Log In</button>
+        <button class="btn-neon w-full text-sm">Get Started Free</button>
+    </div>
+</div>
+<div id="mobile-overlay" class="fixed inset-0 bg-black/60 z-40 hidden" onclick="toggleMobileMenu()"></div>
+
+<!-- ==================== PAGE 1: HOME ==================== -->
+<main id="page-home" class="page active">
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center hero-bg-grid hero-radial pt-20">
+        <div class="blob w-96 h-96 bg-neon/20 top-20 -left-48"></div>
+        <div class="blob w-72 h-72 bg-neon/10 bottom-20 right-10"></div>
+
+        <div class="max-w-7xl mx-auto px-6 py-20 w-full">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <div class="shark-tank-badge inline-flex items-center gap-2 rounded-full px-4 py-2 mb-8 animate-in delay-1">
+                        <i class="fas fa-tv text-neon text-xs"></i>
+                        <span class="text-sm font-medium text-neon/90">Featured on Shark Tank India</span>
+                    </div>
+
+                    <h1 class="font-display font-bold text-5xl md:text-6xl lg:text-7xl leading-[1.05] tracking-tight mb-6 animate-in delay-2">
+                        Teens Earn<br>
+                        <span class="gradient-text">Real Money</span><br>
+                        From Real Companies
+                    </h1>
+
+                    <p class="text-lg md:text-xl text-white/60 max-w-lg mb-10 leading-relaxed animate-in delay-3">
+                        India's first platform where teens aged 13ΓÇô18 work on real projects, build real skills, and earn real money ΓÇö all while still in school.
+                    </p>
+
+                    <div class="flex flex-wrap gap-4 mb-12 animate-in delay-4">
+                        <button class="btn-neon text-base" onclick="showPage('teens')">
+                            I'm a Teen <i class="fas fa-arrow-right ml-2"></i>
+                        </button>
+                        <button class="btn-outline text-base" onclick="showPage('companies')">
+                            I'm a Company
+                        </button>
+                    </div>
+
+                    <div class="flex items-center gap-8 animate-in delay-5">
+                        <div>
+                            <div class="font-display font-bold text-3xl stat-number"><span class="counter" data-target="200000">0</span>+</div>
+                            <div class="text-sm text-white/40 mt-1">Active Teens</div>
+                        </div>
+                        <div class="w-px h-12 bg-white/10"></div>
+                        <div>
+                            <div class="font-display font-bold text-3xl stat-number"><span class="counter" data-target="500">0</span>+</div>
+                            <div class="text-sm text-white/40 mt-1">Companies</div>
+                        </div>
+                        <div class="w-px h-12 bg-white/10"></div>
+                        <div>
+                            <div class="font-display font-bold text-3xl stat-number">Γé╣<span class="counter" data-target="50">0</span>L+</div>
+                            <div class="text-sm text-white/40 mt-1">Earned by Teens</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative hidden lg:block">
+                    <div class="relative floating">
+                        <div class="bg-darkCard border border-darkBorder rounded-3xl p-8 neon-box-glow">
+                            <div class="flex items-center gap-3 mb-6">
+                                <div class="w-12 h-12 rounded-full bg-neon/20 flex items-center justify-center">
+                                    <i class="fas fa-bolt text-neon text-lg"></i>
+                                </div>
+                                <div>
+                                    <div class="font-semibold">New Project Available!</div>
+                                    <div class="text-sm text-white/40">Social Media Campaign</div>
+                                </div>
+                            </div>
+                            <div class="space-y-3 mb-6">
+                                <div class="flex justify-between text-sm">
+                                    <span class="text-white/50">Earnings</span>
+                                    <span class="text-neon font-semibold">Γé╣5,000</span>
+                                </div>
+                                <div class="flex justify-between text-sm">
+                                    <span class="text-white/50">Duration</span>
+                                    <span class="text-white/80">2 Weeks</span>
+                                </div>
+                                <div class="flex justify-between text-sm">
+                                    <span class="text-white/50">Skills</span>
+                                    <span class="text-white/80">Creativity, Design</span>
+                                </div>
+                            </div>
+                            <button class="btn-neon w-full text-sm !py-3">Accept Project</button>
+                        </div>
+
+                        <div class="absolute -top-6 -right-6 bg-darkCard border border-darkBorder rounded-2xl p-4 floating-delay">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-full bg-green-500/20 flex items-center justify-center">
+                                    <i class="fas fa-check text-green-400"></i>
+                                </div>
+                                <div>
+                                    <div class="text-sm font-semibold">Payment Received!</div>
+                                    <div class="text-xs text-green-400">Γé╣3,500 credited</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="absolute -bottom-4 -left-8 bg-darkCard border border-darkBorder rounded-2xl p-4 floating">
+                            <div class="flex items-center gap-3">
+                                <div class="flex -space-x-2">
+                                    <div class="w-8 h-8 rounded-full bg-purple-500/80 flex items-center justify-center text-xs font-bold">A</div>
+                                    <div class="w-8 h-8 rounded-full bg-blue-500/80 flex items-center justify-center text-xs font-bold">R</div>
+                                    <div class="w-8 h-8 rounded-full bg-pink-500/80 flex items-center justify-center text-xs font-bold">S</div>
+                                </div>
+                                <div class="text-xs text-white/60">+128 teens joined<br>this week</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trusted By Marquee -->
+    <section class="py-12 border-y border-darkBorder bg-darkCard/50 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 mb-6">
+            <p class="text-center text-sm text-white/30 font-medium uppercase tracking-widest">Trusted by India's Leading Brands</p>
+        </div>
+        <div class="relative overflow-hidden">
+            <div class="marquee-track flex items-center gap-16 whitespace-nowrap" style="width: max-content;">
+                <span class="trust-logo font-display font-bold text-2xl text-white/30">Zomato</span>
+                <span class="trust-logo font-display font-bold text-2xl text-white/30">Swiggy</span>
+                <span class="trust-logo font-display font-bold text-2xl text-white/30">CRED</span>
+                <span class="trust-logo font-display font-bold text-2xl text-white/30">PhonePe</span>
+                <span class="trust-logo font-display font-bold text-2xl text-white/30">Myntra</span>
+                <span class="trust-logo font-display font-bold text-2xl text-white/30">Unacademy</span>
+                <span class="trust-logo font-display font-bold text-2xl text-white/30">BoAt</span>
+                <span class="trust-logo font-display font-bold text-2xl text-white/30">Lenskart</span>
+                <span class="trust-logo font-display font-bold text-2xl text-white/30">Urban Company</span>
+                <span class="trust-logo font-display font-bold text-2xl text-white/30">Groww</span>
+                <span class="trust-logo font-display font-bold text-2xl text-white/30">Zomato</span>
+                <span class="trust-logo font-display font-bold text-2xl text-white/30">Swiggy</span>
+                <span class="trust-logo font-display font-bold text-2xl text-white/30">CRED</span>
+                <span class="trust-logo font-display font-bold text-2xl text-white/30">PhonePe</span>
+                <span class="trust-logo font-display font-bold text-2xl text-white/30">Myntra</span>
+                <span class="trust-logo font-display font-bold text-2xl text-white/30">Unacademy</span>
+                <span class="trust-logo font-display font-bold text-2xl text-white/30">BoAt</span>
+                <span class="trust-logo font-display font-bold text-2xl text-white/30">Lenskart</span>
+                <span class="trust-logo font-display font-bold text-2xl text-white/30">Urban Company</span>
+                <span class="trust-logo font-display font-bold text-2xl text-white/30">Groww</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Two Pathways Section -->
+    <section class="py-24 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="font-display font-bold text-4xl md:text-5xl mb-4">Choose Your <span class="gradient-text">Pathway</span></h2>
+                <p class="text-white/50 text-lg max-w-2xl mx-auto">Whether you're a teen ready to earn or a company looking for fresh talent ΓÇö Funngro has you covered.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="card-teen group cursor-pointer relative overflow-hidden" onclick="showPage('teens')">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-purple-500/5 rounded-full -translate-y-1/2 translate-x-1/2 group-hover:scale-150 transition-transform duration-700"></div>
+                    <div class="relative">
+                        <div class="w-16 h-16 rounded-2xl bg-purple-500/15 flex items-center justify-center mb-6">
+                            <i class="fas fa-rocket text-teenPurple text-2xl"></i>
+                        </div>
+                        <h3 class="font-display font-bold text-2xl mb-3">For Teens <span class="text-2xl">≡ƒºæΓÇì≡ƒÆ╗</span></h3>
+                        <p class="text-white/50 mb-6 leading-relaxed">Aged 13-18? Start working on real projects from real companies. Earn money, build your resume, and discover your passion ΓÇö all before college.</p>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center gap-3 text-sm text-white/60">
+                                <i class="fas fa-check-circle text-teenPurple"></i> Earn Γé╣2,000 - Γé╣15,000 per project
+                            </li>
+                            <li class="flex items-center gap-3 text-sm text-white/60">
+                                <i class="fas fa-check-circle text-teenPurple"></i> Build real-world skills & portfolio
+                            </li>
+                            <li class="flex items-center gap-3 text-sm text-white/60">
+                                <i class="fas fa-check-circle text-teenPurple"></i> Get certified by top brands
+                            </li>
+                            <li class="flex items-center gap-3 text-sm text-white/60">
+                                <i class="fas fa-check-circle text-teenPurple"></i> Flexible hours ΓÇö study first, work later
+                            </li>
+                        </ul>
+                        <div class="flex items-center gap-2 text-teenPurple font-semibold group-hover:gap-4 transition-all">
+                            Explore for Teens <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-company group cursor-pointer relative overflow-hidden" onclick="showPage('companies')">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-orange-500/5 rounded-full -translate-y-1/2 translate-x-1/2 group-hover:scale-150 transition-transform duration-700"></div>
+                    <div class="relative">
+                        <div class="w-16 h-16 rounded-2xl bg-orange-500/15 flex items-center justify-center mb-6">
+                            <i class="fas fa-building text-compOrange text-2xl"></i>
+                        </div>
+                        <h3 class="font-display font-bold text-2xl mb-3">For Companies <span class="text-2xl">≡ƒÅó</span></h3>
+                        <p class="text-white/50 mb-6 leading-relaxed">Access India's most creative and digitally-native generation. Get fresh perspectives, authentic content, and Gen-Z insights for your brand.</p>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center gap-3 text-sm text-white/60">
+                                <i class="fas fa-check-circle text-compOrange"></i> Access 2L+ verified teen talent
+                            </li>
+                            <li class="flex items-center gap-3 text-sm text-white/60">
+                                <i class="fas fa-check-circle text-compOrange"></i> Cost-effective project execution
+                            </li>
+                            <li class="flex items-center gap-3 text-sm text-white/60">
+                                <i class="fas fa-check-circle text-compOrange"></i> Gen-Z authentic content & feedback
+                            </li>
+                            <li class="flex items-center gap-3 text-sm text-white/60">
+                                <i class="fas fa-check-circle text-compOrange"></i> Build future brand ambassadors
+                            </li>
+                        </ul>
+                        <div class="flex items-center gap-2 text-compOrange font-semibold group-hover:gap-4 transition-all">
+                            Explore for Companies <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="how-it-works" class="py-24 px-6 relative">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="font-display font-bold text-4xl md:text-5xl mb-4">How <span class="gradient-text">Funngro</span> Works</h2>
+                <p class="text-white/50 text-lg max-w-2xl mx-auto">From sign-up to your first payment ΓÇö it's simple, safe, and super fun.</p>
+            </div>
+
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="text-center group">
+                    <div class="w-20 h-20 rounded-2xl bg-neon/10 border border-neon/20 flex items-center justify-center mx-auto mb-6 group-hover:bg-neon/20 transition-colors pulse-neon">
+                        <span class="font-display font-bold text-2xl text-neon">01</span>
+                    </div>
+                    <h3 class="font-display font-semibold text-lg mb-2">Sign Up Free</h3>
+                    <p class="text-sm text-white/40 leading-relaxed">Create your profile in 2 minutes. Parental consent for teens under 18.</p>
+                </div>
+                <div class="text-center group">
+                    <div class="w-20 h-20 rounded-2xl bg-neon/10 border border-neon/20 flex items-center justify-center mx-auto mb-6 group-hover:bg-neon/20 transition-colors">
+                        <span class="font-display font-bold text-2xl text-neon">02</span>
+                    </div>
+                    <h3 class="font-display font-semibold text-lg mb-2">Pick Projects</h3>
+                    <p class="text-sm text-white/40 leading-relaxed">Browse projects from top brands. Choose what matches your interest and skills.</p>
+                </div>
+                <div class="text-center group">
+                    <div class="w-20 h-20 rounded-2xl bg-neon/10 border border-neon/20 flex items-center justify-center mx-auto mb-6 group-hover:bg-neon/20 transition-colors">
+                        <span class="font-display font-bold text-2xl text-neon">03</span>
+                    </div>
+                    <h3 class="font-display font-semibold text-lg mb-2">Submit Work</h3>
+                    <p class="text-sm text-white/40 leading-relaxed">Complete tasks at your pace. Get guidance and feedback from mentors.</p>
+                </div>
+                <div class="text-center group">
+                    <div class="w-20 h-20 rounded-2xl bg-neon/10 border border-neon/20 flex items-center justify-center mx-auto mb-6 group-hover:bg-neon/20 transition-colors">
+                        <span class="font-display font-bold text-2xl text-neon">04</span>
+                    </div>
+                    <h3 class="font-display font-semibold text-lg mb-2">Get Paid</h3>
+                    <p class="text-sm text-white/40 leading-relaxed">Receive real money directly to your bank account. Earn certificates too!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="py-24 px-6 bg-darkCard/30">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="font-display font-bold text-4xl md:text-5xl mb-4">What Teens & Parents <span class="gradient-text">Say</span></h2>
+                <p class="text-white/50 text-lg max-w-2xl mx-auto">Real stories from real Funngro teens and their families.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="testimonial-card">
+                    <div class="flex items-center gap-1 mb-4">
+                        <i class="fas fa-star text-yellow-400 text-sm"></i>
+                        <i class="fas fa-star text-yellow-400 text-sm"></i>
+                        <i class="fas fa-star text-yellow-400 text-sm"></i>
+                        <i class="fas fa-star text-yellow-400 text-sm"></i>
+                        <i class="fas fa-star text-yellow-400 text-sm"></i>
+                    </div>
+                    <p class="text-white/60 text-sm leading-relaxed mb-6">"I earned Γé╣12,000 in my first month by creating social media content for a startup. Funngro made me realise my creativity has real value!"</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-purple-500/30 flex items-center justify-center font-bold text-sm text-purple-300">A</div>
+                        <div>
+                            <div class="text-sm font-semibold">Ananya Sharma</div>
+                            <div class="text-xs text-white/30">Age 16, Delhi</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="flex items-center gap-1 mb-4">
+                        <i class="fas fa-star text-yellow-400 text-sm"></i>
+                        <i class="fas fa-star text-yellow-400 text-sm"></i>
+                        <i class="fas fa-star text-yellow-400 text-sm"></i>
+                        <i class="fas fa-star text-yellow-400 text-sm"></i>
+                        <i class="fas fa-star text-yellow-400 text-sm"></i>
+                    </div>
+                    <p class="text-white/60 text-sm leading-relaxed mb-6">"As a parent, I was sceptical. But Funngro is safe, supervised, and my son has learned more about marketing than any textbook could teach."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-blue-500/30 flex items-center justify-center font-bold text-sm text-blue-300">R</div>
+                        <div>
+                            <div class="text-sm font-semibold">Rajesh Patel</div>
+                            <div class="text-xs text-white/30">Parent, Mumbai</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="flex items-center gap-1 mb-4">
+                        <i class="fas fa-star text-yellow-400 text-sm"></i>
+                        <i class="fas fa-star text-yellow-400 text-sm"></i>
+                        <i class="fas fa-star text-yellow-400 text-sm"></i>
+                        <i class="fas fa-star text-yellow-400 text-sm"></i>
+                        <i class="fas fa-star text-yellow-400 text-sm"></i>
+                    </div>
+                    <p class="text-white/60 text-sm leading-relaxed mb-6">"I did a UX research project for an app company. Now I have a certificate, portfolio piece, and Γé╣8,000. This is the future of teen empowerment."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-pink-500/30 flex items-center justify-center font-bold text-sm text-pink-300">P</div>
+                        <div>
+                            <div class="text-sm font-semibold">Priya Nair</div>
+                            <div class="text-xs text-white/30">Age 17, Bengaluru</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shark Tank Section -->
+    <section class="py-24 px-6 relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-b from-neon/5 via-transparent to-transparent"></div>
+        <div class="max-w-4xl mx-auto text-center relative">
+            <div class="shark-tank-badge inline-flex items-center gap-3 rounded-2xl px-6 py-3 mb-8">
+                <i class="fas fa-tv text-neon"></i>
+                <span class="font-semibold text-neon">Shark Tank India - Season 2</span>
+            </div>
+            <h2 class="font-display font-bold text-4xl md:text-5xl mb-6">From a Pitch to a <span class="gradient-text">Movement</span></h2>
+            <p class="text-white/50 text-lg max-w-2xl mx-auto mb-10 leading-relaxed">When we pitched Funngro on Shark Tank India, the Sharks saw what we see every day ΓÇö teens are capable of incredible things when given the right opportunity. Today, we're building India's largest teen workforce.</p>
+            <div class="grid grid-cols-3 gap-6 max-w-lg mx-auto">
+                <div class="text-center">
+                    <div class="font-display font-bold text-3xl text-neon">4</div>
+                    <div class="text-xs text-white/30 mt-1">Sharks Interested</div>
+                </div>
+                <div class="text-center">
+                    <div class="font-display font-bold text-3xl text-neon">10x</div>
+                    <div class="text-xs text-white/30 mt-1">Growth Post Show</div>
+                </div>
+                <div class="text-center">
+                    <div class="font-display font-bold text-3xl text-neon">50+</div>
+                    <div class="text-xs text-white/30 mt-1">Cities Reached</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-24 px-6 bg-darkCard/30">
+        <div class="max-w-3xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="font-display font-bold text-4xl md:text-5xl mb-4">Frequently Asked <span class="gradient-text">Questions</span></h2>
+            </div>
+
+            <div class="space-y-4">
+                <div class="faq-item card-dark !p-0 cursor-pointer" onclick="toggleFaq(this)">
+                    <div class="flex items-center justify-between p-6">
+                        <span class="font-semibold pr-4">Is Funngro safe for teenagers?</span>
+                        <i class="fas fa-plus faq-icon text-neon flex-shrink-0"></i>
+                    </div>
+                    <div class="faq-answer px-6 pb-6">
+                        <p class="text-white/50 text-sm leading-relaxed">Absolutely. Funngro requires parental consent for all users under 18. All projects are reviewed for age-appropriateness, and every interaction is monitored. We are compliant with Indian child protection laws and take safety extremely seriously.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item card-dark !p-0 cursor-pointer" onclick="toggleFaq(this)">
+                    <div class="flex items-center justify-between p-6">
+                        <span class="font-semibold pr-4">How do teens get paid?</span>
+                        <i class="fas fa-plus faq-icon text-neon flex-shrink-0"></i>
+                    </div>
+                    <div class="faq-answer px-6 pb-6">
+                        <p class="text-white/50 text-sm leading-relaxed">Payments are transferred directly to the teen's bank account (via UPI or NEFT) within 7 days of project completion and approval. For minors, payments are routed through a parent/guardian-linked account.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item card-dark !p-0 cursor-pointer" onclick="toggleFaq(this)">
+                    <div class="flex items-center justify-between p-6">
+                        <span class="font-semibold pr-4">Will this affect my child's studies?</span>
+                        <i class="fas fa-plus faq-icon text-neon flex-shrink-0"></i>
+                    </div>
+                    <div class="faq-answer px-6 pb-6">
+                        <p class="text-white/50 text-sm leading-relaxed">Funngro is designed to be flexible. Teens can choose projects that fit their schedule, and most tasks require only 2-5 hours per week. Many parents report that the real-world application actually improves their child's academic motivation.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item card-dark !p-0 cursor-pointer" onclick="toggleFaq(this)">
+                    <div class="flex items-center justify-between p-6">
+                        <span class="font-semibold pr-4">What kind of projects do companies post?</span>
+                        <i class="fas fa-plus faq-icon text-neon flex-shrink-0"></i>
+                    </div>
+                    <div class="faq-answer px-6 pb-6">
+                        <p class="text-white/50 text-sm leading-relaxed">Projects range from social media content creation, product reviews, UI/UX feedback, survey participation, blog writing, video creation, to market research. All projects are designed to be age-appropriate and skill-building.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item card-dark !p-0 cursor-pointer" onclick="toggleFaq(this)">
+                    <div class="flex items-center justify-between p-6">
+                        <span class="font-semibold pr-4">How much does it cost to join?</span>
+                        <i class="fas fa-plus faq-icon text-neon flex-shrink-0"></i>
+                    </div>
+                    <div class="faq-answer px-6 pb-6">
+                        <p class="text-white/50 text-sm leading-relaxed">Funngro is completely free for teens to join. There are no hidden fees or charges. Companies pay a platform fee to post projects, but teens never pay anything to participate or earn.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-24 px-6 relative">
+        <div class="max-w-4xl mx-auto text-center">
+            <div class="card-dark neon-box-glow relative overflow-hidden">
+                <div class="absolute inset-0 shimmer"></div>
+                <div class="relative">
+                    <h2 class="font-display font-bold text-4xl md:text-5xl mb-4">Ready to Start <span class="gradient-text">Earning?</span></h2>
+                    <p class="text-white/50 text-lg max-w-xl mx-auto mb-8">Join 2 lakh+ teens who are already building their future with Funngro. It takes less than 2 minutes to get started.</p>
+                    <div class="flex flex-wrap justify-center gap-4">
+                        <button class="btn-neon text-base" onclick="showPage('teens')">
+                            Join as Teen ΓÇö It's Free <i class="fas fa-arrow-right ml-2"></i>
+                        </button>
+                        <button class="btn-outline text-base" onclick="showPage('companies')">
+                            Post a Project
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- ==================== PAGE 2: FOR TEENS ==================== -->
+<main id="page-teens" class="page">
+    <section class="relative min-h-screen teen-radial hero-bg-grid pt-32 pb-24 px-6">
+        <div class="blob w-80 h-80 bg-purple-500/15 top-32 right-0"></div>
+
+        <div class="max-w-7xl mx-auto">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <div class="inline-flex items-center gap-2 rounded-full px-4 py-2 mb-6 border border-purple-500/20 bg-purple-500/5">
+                        <span class="text-sm font-medium text-purple-300">≡ƒºæΓÇì≡ƒÆ╗ For Teens (Age 13-18)</span>
+                    </div>
+
+                    <h1 class="font-display font-bold text-5xl md:text-6xl leading-[1.05] tracking-tight mb-6">
+                        Your First<br>
+                        <span class="gradient-text-purple">Real Job</span><br>
+                        Starts Here
+                    </h1>
+
+                    <p class="text-lg text-white/60 max-w-lg mb-10 leading-relaxed">
+                        No fake internships. No "experience letters" that mean nothing. Funngro connects you with real companies who pay real money for your real work.
+                    </p>
+
+                    <div class="flex flex-wrap gap-4 mb-12">
+                        <button class="btn-neon text-base" style="background: #8B5CF6; color: white;" onmouseover="this.style.background='#7C3AED'" onmouseout="this.style.background='#8B5CF6'">
+                            Create Free Account <i class="fas fa-arrow-right ml-2"></i>
+                        </button>
+                        <button class="btn-outline text-base" style="border-color: #2a1f4a;" onmouseover="this.style.borderColor='#8B5CF6'; this.style.color='#8B5CF6'" onmouseout="this.style.borderColor='#2a1f4a'; this.style.color='white'">
+                            <i class="fas fa-play-circle mr-2"></i> Watch How It Works
+                        </button>
+                    </div>
+
+                    <div class="grid grid-cols-3 gap-4">
+                        <div class="text-center p-4 rounded-xl bg-purple-500/5 border border-purple-500/10">
+                            <div class="font-display font-bold text-2xl text-purple-400">Γé╣5K</div>
+                            <div class="text-xs text-white/30 mt-1">Avg. Per Project</div>
+                        </div>
+                        <div class="text-center p-4 rounded-xl bg-purple-500/5 border border-purple-500/10">
+                            <div class="font-display font-bold text-2xl text-purple-400">2-5hrs</div>
+                            <div class="text-xs text-white/30 mt-1">Per Week</div>
+                        </div>
+                        <div class="text-center p-4 rounded-xl bg-purple-500/5 border border-purple-500/10">
+                            <div class="font-display font-bold text-2xl text-purple-400">100%</div>
+                            <div class="text-xs text-white/30 mt-1">Safe & Verified</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative hidden lg:block">
+                    <div class="floating">
+                        <div class="bg-darkCard border border-purple-500/20 rounded-3xl p-8" style="box-shadow: 0 0 40px rgba(139,92,246,0.15);">
+                            <div class="flex items-center gap-3 mb-6 pb-6 border-b border-white/5">
+                                <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-purple-500/30 to-blue-500/30 flex items-center justify-center">
+                                    <i class="fas fa-user-graduate text-purple-300 text-xl"></i>
+                                </div>
+                                <div>
+                                    <div class="font-bold text-lg">My Dashboard</div>
+                                    <div class="text-sm text-white/40">Welcome back, Ananya!</div>
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-2 gap-4 mb-6">
+                                <div class="bg-purple-500/10 rounded-xl p-4 text-center">
+                                    <div class="font-bold text-xl text-purple-300">Γé╣24,500</div>
+                                    <div class="text-xs text-white/30 mt-1">Total Earned</div>
+                                </div>
+                                <div class="bg-blue-500/10 rounded-xl p-4 text-center">
+                                    <div class="font-bold text-xl text-blue-300">12</div>
+                                    <div class="text-xs text-white/30 mt-1">Projects Done</div>
+                                </div>
+                            </div>
+                            <div class="space-y-3">
+                                <div class="flex items-center justify-between p-3 bg-white/5 rounded-xl">
+                                    <div class="flex items-center gap-3">
+                                        <div class="w-8 h-8 rounded-lg bg-green-500/20 flex items-center justify-center"><i class="fas fa-check text-green-400 text-xs"></i></div>
+                                        <div>
+                                            <div class="text-sm font-medium">Reels Campaign</div>
+                                            <div class="text-xs text-white/30">Completed</div>
+                                        </div>
+                                    </div>
+                                    <span class="text-sm text-green-400 font-semibold">Γé╣4,000</span>
+                                </div>
+                                <div class="flex items-center justify-between p-3 bg-white/5 rounded-xl">
+                                    <div class="flex items-center gap-3">
+                                        <div class="w-8 h-8 rounded-lg bg-yellow-500/20 flex items-center justify-center"><i class="fas fa-clock text-yellow-400 text-xs"></i></div>
+                                        <div>
+                                            <div class="text-sm font-medium">App Review</div>
+                                            <div class="text-xs text-white/30">In Progress</div>
+                                        </div>
+                                    </div>
+                                    <span class="text-sm text-yellow-400 font-semibold">Γé╣3,000</span>
+                                </div>
+                                <div class="flex items-center justify-between p-3 bg-white/5 rounded-xl">
+                                    <div class="flex items-center gap-3">
+                                        <div class="w-8 h-8 rounded-lg bg-purple-500/20 flex items-center justify-center"><i class="fas fa-trophy text-purple-400 text-xs"></i></div>
+                                        <div>
+                                            <div class="text-sm font-medium">Brand Ambassador</div>
+                                            <div class="text-xs text-white/30">New!</div>
+                                        </div>
+                                    </div>
+                                    <span class="text-sm text-purple-400 font-semibold">Γé╣7,500</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Categories -->
+    <section class="py-24 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="font-display font-bold text-4xl md:text-5xl mb-4">Projects That <span class="gradient-text-purple">Match Your Skills</span></h2>
+                <p class="text-white/50 text-lg max-w-2xl mx-auto">Whether you love creating content, designing, writing, or giving opinions ΓÇö there's a project waiting for you.</p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+                <div class="card-teen text-center group cursor-pointer !p-6">
+                    <div class="text-3xl mb-3">≡ƒÄ¿</div>
+                    <div class="text-sm font-semibold">Design & Creative</div>
+                    <div class="text-xs text-white/30 mt-1">45 Projects</div>
+                </div>
+                <div class="card-teen text-center group cursor-pointer !p-6">
+                    <div class="text-3xl mb-3">≡ƒô▒</div>
+                    <div class="text-sm font-semibold">Social Media</div>
+                    <div class="text-xs text-white/30 mt-1">120 Projects</div>
+                </div>
+                <div class="card-teen text-center group cursor-pointer !p-6">
+                    <div class="text-3xl mb-3">Γ£ì∩╕Å</div>
+                    <div class="text-sm font-semibold">Content Writing</div>
+                    <div class="text-xs text-white/30 mt-1">78 Projects</div>
+                </div>
+                <div class="card-teen text-center group cursor-pointer !p-6">
+                    <div class="text-3xl mb-3">≡ƒÄ¼</div>
+                    <div class="text-sm font-semibold">Video Creation</div>
+                    <div class="text-xs text-white/30 mt-1">56 Projects</div>
+                </div>
+                <div class="card-teen text-center group cursor-pointer !p-6">
+                    <div class="text-3xl mb-3">≡ƒôè</div>
+                    <div class="text-sm font-semibold">Surveys & Reviews</div>
+                    <div class="text-xs text-white/30 mt-1">200+ Projects</div>
+                </div>
+                <div class="card-teen text-center group cursor-pointer !p-6">
+                    <div class="text-3xl mb-3">≡ƒÆí</div>
+                    <div class="text-sm font-semibold">Ideas & Feedback</div>
+                    <div class="text-xs text-white/30 mt-1">34 Projects</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How to Get Started - Teens -->
+    <section class="py-24 px-6 bg-darkCard/30">
+        <div class="max-w-3xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="font-display font-bold text-4xl md:text-5xl mb-4">Start Earning in <span class="gradient-text-purple">4 Simple Steps</span></h2>
+            </div>
+
+            <div class="space-y-2">
+                <div class="card-teen flex items-start gap-6">
+                    <div class="w-14 h-14 rounded-2xl bg-purple-500/20 flex items-center justify-center flex-shrink-0">
+                        <span class="font-display font-bold text-xl text-purple-300">1</span>
+                    </div>
+                    <div>
+                        <h3 class="font-display font-semibold text-lg mb-1">Create Your Profile</h3>
+                        <p class="text-sm text-white/40 leading-relaxed">Sign up with your basic details. Add your interests, skills, and a short bio. Get your parent to approve ΓÇö it takes 2 minutes.</p>
+                    </div>
+                </div>
+                <div class="step-connector"></div>
+                <div class="card-teen flex items-start gap-6">
+                    <div class="w-14 h-14 rounded-2xl bg-purple-500/20 flex items-center justify-center flex-shrink-0">
+                        <span class="font-display font-bold text-xl text-purple-300">2</span>
+                    </div>
+                    <div>
+                        <h3 class="font-display font-semibold text-lg mb-1">Browse & Apply</h3>
+                        <p class="text-sm text-white/40 leading-relaxed">Explore projects from top brands. Read the requirements, check the payout, and hit "Apply" on projects that excite you.</p>
+                    </div>
+                </div>
+                <div class="step-connector"></div>
+                <div class="card-teen flex items-start gap-6">
+                    <div class="w-14 h-14 rounded-2xl bg-blue-500/20 flex items-center justify-center flex-shrink-0">
+                        <span class="font-display font-bold text-xl text-blue-300">3</span>
+                    </div>
+                    <div>
+                        <h3 class="font-display font-semibold text-lg mb-1">Complete & Submit</h3>
+                        <p class="text-sm text-white/40 leading-relaxed">Work on the project at your own pace. Follow the guidelines, create your deliverables, and submit before the deadline.</p>
+                    </div>
+                </div>
+                <div class="step-connector"></div>
+                <div class="card-teen flex items-start gap-6">
+                    <div class="w-14 h-14 rounded-2xl bg-blue-500/20 flex items-center justify-center flex-shrink-0">
+                        <span class="font-display font-bold text-xl text-blue-300">4</span>
+                    </div>
+                    <div>
+                        <h3 class="font-display font-semibold text-lg mb-1">Get Paid & Certified</h3>
+                        <p class="text-sm text-white/40 leading-relaxed">Once approved, your earnings are transferred to your bank account. You also receive a digital certificate from the company.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Teen Success Stories -->
+    <section class="py-24 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="font-display font-bold text-4xl md:text-5xl mb-4">Teen <span class="gradient-text-purple">Success Stories</span></h2>
+                <p class="text-white/50 text-lg">Real teens, real earnings, real growth.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="card-teen relative overflow-hidden">
+                    <div class="absolute top-4 right-4 bg-green-500/20 text-green-400 text-xs font-bold px-3 py-1 rounded-full">Earned Γé╣45,000+</div>
+                    <div class="w-16 h-16 rounded-full bg-gradient-to-br from-purple-500/40 to-pink-500/40 flex items-center justify-center font-bold text-2xl mb-4">A</div>
+                    <h3 class="font-display font-bold text-lg mb-1">Aarav Mehta</h3>
+                    <p class="text-sm text-white/30 mb-4">Age 17, Jaipur ΓÇó 8 Months on Funngro</p>
+                    <p class="text-sm text-white/50 leading-relaxed">"Started with simple reviews, now I'm creating video content for 3 brands simultaneously. Funngro gave me a career direction I never knew I wanted."</p>
+                </div>
+
+                <div class="card-teen relative overflow-hidden">
+                    <div class="absolute top-4 right-4 bg-green-500/20 text-green-400 text-xs font-bold px-3 py-1 rounded-full">Earned Γé╣32,000+</div>
+                    <div class="w-16 h-16 rounded-full bg-gradient-to-br from-blue-500/40 to-cyan-500/40 flex items-center justify-center font-bold text-2xl mb-4">S</div>
+                    <h3 class="font-display font-bold text-lg mb-1">Sneha Reddy</h3>
+                    <p class="text-sm text-white/30 mb-4">Age 15, Hyderabad ΓÇó 5 Months on Funngro</p>
+                    <p class="text-sm text-white/50 leading-relaxed">"I used my Funngro earnings to buy my first laptop. My parents are proud, and I feel more confident than ever. The certificates helped me in my college applications too."</p>
+                </div>
+
+                <div class="card-teen relative overflow-hidden">
+                    <div class="absolute top-4 right-4 bg-green-500/20 text-green-400 text-xs font-bold px-3 py-1 rounded-full">Earned Γé╣58,000+</div>
+                    <div class="w-16 h-16 rounded-full bg-gradient-to-br from-orange-500/40 to-red-500/40 flex items-center justify-center font-bold text-2xl mb-4">V</div>
+                    <h3 class="font-display font-bold text-lg mb-1">Vikram Singh</h3>
+                    <p class="text-sm text-white/30 mb-4">Age 18, Chandigarh ΓÇó 12 Months on Funngro</p>
+                    <p class="text-sm text-white/50 leading-relaxed">"I've done 22 projects across design, content, and research. Funngro basically trained me for the real world. I even got a freelance offer from one of the companies!"</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Teen CTA -->
+    <section class="py-24 px-6">
+        <div class="max-w-4xl mx-auto">
+            <div class="card-teen relative overflow-hidden text-center" style="box-shadow: 0 0 60px rgba(139,92,246,0.15);">
+                <div class="absolute inset-0" style="background: linear-gradient(135deg, rgba(139,92,246,0.1), rgba(59,130,246,0.05));"></div>
+                <div class="relative">
+                    <div class="text-5xl mb-6">≡ƒÜÇ</div>
+                    <h2 class="font-display font-bold text-4xl md:text-5xl mb-4">Your Future Self Will <span class="gradient-text-purple">Thank You</span></h2>
+                    <p class="text-white/50 text-lg max-w-xl mx-auto mb-8">Every project you complete on Funngro builds your resume, your skills, and your bank balance. Start now ΓÇö it's free.</p>
+                    <div class="flex flex-wrap justify-center gap-4">
+                        <button class="text-base font-bold px-8 py-4 rounded-xl text-white transition-all hover:-translate-y-1" style="background: linear-gradient(135deg, #8B5CF6, #3B82F6); box-shadow: 0 8px 30px rgba(139,92,246,0.3);" onmouseover="this.style.boxShadow='0 12px 40px rgba(139,92,246,0.5)'" onmouseout="this.style.boxShadow='0 8px 30px rgba(139,92,246,0.3)'">
+                            Join Funngro ΓÇö It's Free <i class="fas fa-arrow-right ml-2"></i>
+                        </button>
+                    </div>
+                    <p class="text-xs text-white/20 mt-4">No credit card needed ΓÇó Parental consent required ΓÇó 100% safe</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- ==================== PAGE 3: FOR COMPANIES ==================== -->
+<main id="page-companies" class="page">
+    <section class="relative min-h-screen company-radial hero-bg-grid pt-32 pb-24 px-6">
+        <div class="blob w-80 h-80 bg-orange-500/15 top-32 left-0"></div>
+
+        <div class="max-w-7xl mx-auto">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <div class="inline-flex items-center gap-2 rounded-full px-4 py-2 mb-6 border border-orange-500/20 bg-orange-500/5">
+                        <span class="text-sm font-medium text-orange-300">≡ƒÅó For Companies & Brands</span>
+                    </div>
+
+                    <h1 class="font-display font-bold text-5xl md:text-6xl leading-[1.05] tracking-tight mb-6">
+                        Hire India's<br>
+                        <span class="gradient-text-orange">Gen-Z Talent</span><br>
+                        On Demand
+                    </h1>
+
+                    <p class="text-lg text-white/60 max-w-lg mb-10 leading-relaxed">
+                        Access 2 lakh+ digitally-native teens for content creation, product feedback, brand advocacy, and market research ΓÇö at a fraction of traditional costs.
+                    </p>
+
+                    <div class="flex flex-wrap gap-4 mb-12">
+                        <button class="btn-neon text-base" style="background: #F97316; color: white;" onmouseover="this.style.background='#EA580C'" onmouseout="this.style.background='#F97316'">
+                            Post Your First Project <i class="fas fa-arrow-right ml-2"></i>
+                        </button>
+                        <button class="btn-outline text-base" style="border-color: #3a2a1a;" onmouseover="this.style.borderColor='#F97316'; this.style.color='#F97316'" onmouseout="this.style.borderColor='#3a2a1a'; this.style.color='white'">
+                            <i class="fas fa-calendar-check mr-2"></i> Book a Demo
+                        </button>
+                    </div>
+
+                    <div class="grid grid-cols-3 gap-4">
+                        <div class="text-center p-4 rounded-xl bg-orange-500/5 border border-orange-500/10">
+                            <div class="font-display font-bold text-2xl text-orange-400">2L+</div>
+                            <div class="text-xs text-white/30 mt-1">Teen Users</div>
+                        </div>
+                        <div class="text-center p-4 rounded-xl bg-orange-500/5 border border-orange-500/10">
+                            <div class="font-display font-bold text-2xl text-orange-400">50+</div>
+                            <div class="text-xs text-white/30 mt-1">Cities</div>
+                        </div>
+                        <div class="text-center p-4 rounded-xl bg-orange-500/5 border border-orange-500/10">
+                            <div class="font-display font-bold text-2xl text-orange-400">90%</div>
+                            <div class="text-xs text-white/30 mt-1">Satisfaction</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative hidden lg:block">
+                    <div class="floating">
+                        <div class="bg-darkCard border border-orange-500/20 rounded-3xl p-8" style="box-shadow: 0 0 40px rgba(249,115,22,0.15);">
+                            <div class="flex items-center gap-3 mb-6 pb-6 border-b border-white/5">
+                                <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-orange-500/30 to-pink-500/30 flex items-center justify-center">
+                                    <i class="fas fa-chart-line text-orange-300 text-xl"></i>
+                                </div>
+                                <div>
+                                    <div class="font-bold text-lg">Company Dashboard</div>
+                                    <div class="text-sm text-white/40">Acme Brands Pvt. Ltd.</div>
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-2 gap-4 mb-6">
+                                <div class="bg-orange-500/10 rounded-xl p-4 text-center">
+                                    <div class="font-bold text-xl text-orange-300">847</div>
+                                    <div class="text-xs text-white/30 mt-1">Applications</div>
+                                </div>
+                                <div class="bg-pink-500/10 rounded-xl p-4 text-center">
+                                    <div class="font-bold text-xl text-pink-300">23</div>
+                                    <div class="text-xs text-white/30 mt-1">Active Projects</div>
+                                </div>
+                            </div>
+                            <div class="space-y-3">
+                                <div class="flex items-center justify-between p-3 bg-white/5 rounded-xl">
+                                    <div>
+                                        <div class="text-sm font-medium">Social Media Campaign</div>
+                                        <div class="text-xs text-white/30">45 applicants ΓÇó Γé╣5,000/project</div>
+                                    </div>
+                                    <span class="text-xs bg-green-500/20 text-green-400 px-2 py-1 rounded-full">Live</span>
+                                </div>
+                                <div class="flex items-center justify-between p-3 bg-white/5 rounded-xl">
+                                    <div>
+                                        <div class="text-sm font-medium">Product Feedback Survey</div>
+                                        <div class="text-xs text-white/30">230 responses ΓÇó Γé╣2,000/project</div>
+                                    </div>
+                                    <span class="text-xs bg-blue-500/20 text-blue-400 px-2 py-1 rounded-full">Review</span>
+                                </div>
+                                <div class="flex items-center justify-between p-3 bg-white/5 rounded-xl">
+                                    <div>
+                                        <div class="text-sm font-medium">Reels Creation Challenge</div>
+                                        <div class="text-xs text-white/30">89 submissions ΓÇó Γé╣3,000/project</div>
+                                    </div>
+                                    <span class="text-xs bg-orange-500/20 text-orange-400 px-2 py-1 rounded-full">Active</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Companies Love Funngro -->
+    <section class="py-24 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="font-display font-bold text-4xl md:text-5xl mb-4">Why Companies <span class="gradient-text-orange">Love Funngro</span></h2>
+                <p class="text-white/50 text-lg max-w-2xl mx-auto">From startups to unicorns ΓÇö brands are leveraging Gen-Z power through Funngro.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="card-company">
+                    <div class="w-14 h-14 rounded-2xl bg-orange-500/15 flex items-center justify-center mb-5">
+                        <i class="fas fa-users text-orange-400 text-xl"></i>
+                    </div>
+                    <h3 class="font-display font-semibold text-lg mb-2">Access 2L+ Gen-Z Talent</h3>
+                    <p class="text-sm text-white/40 leading-relaxed">Pre-verified teens from 50+ cities, ready to work on your projects. Filter by age, location, interests, and skills.</p>
+                </div>
+
+                <div class="card-company">
+                    <div class="w-14 h-14 rounded-2xl bg-orange-500/15 flex items-center justify-center mb-5">
+                        <i class="fas fa-coins text-orange-400 text-xl"></i>
+                    </div>
+                    <h3 class="font-display font-semibold text-lg mb-2">70% Cost Savings</h3>
+                    <p class="text-sm text-white/40 leading-relaxed">Get quality work done at a fraction of agency costs. Projects start from just Γé╣2,000 ΓÇö no retainers, no overheads.</p>
+                </div>
+
+                <div class="card-company">
+                    <div class="w-14 h-14 rounded-2xl bg-orange-500/15 flex items-center justify-center mb-5">
+                        <i class="fas fa-bolt text-orange-400 text-xl"></i>
+                    </div>
+                    <h3 class="font-display font-semibold text-lg mb-2">Fast Turnaround</h3>
+                    <p class="text-sm text-white/40 leading-relaxed">Most projects are completed within 1-2 weeks. Teens are digital natives who work fast and deliver fresh perspectives.</p>
+                </div>
+
+                <div class="card-company">
+                    <div class="w-14 h-14 rounded-2xl bg-pink-500/15 flex items-center justify-center mb-5">
+                        <i class="fas fa-heart text-pink-400 text-xl"></i>
+                    </div>
+                    <h3 class="font-display font-semibold text-lg mb-2">Build Brand Love Early</h3>
+                    <p class="text-sm text-white/40 leading-relaxed">Engage teens as brand ambassadors. They become lifelong customers and organic advocates among their networks.</p>
+                </div>
+
+                <div class="card-company">
+                    <div class="w-14 h-14 rounded-2xl bg-pink-500/15 flex items-center justify-center mb-5">
+                        <i class="fas fa-shield-halved text-pink-400 text-xl"></i>
+                    </div>
+                    <h3 class="font-display font-semibold text-lg mb-2">Safe & Compliant</h3>
+                    <p class="text-sm text-white/40 leading-relaxed">All interactions happen on our platform. Parental consent is built-in. We handle compliance so you can focus on results.</p>
+                </div>
+
+                <div class="card-company">
+                    <div class="w-14 h-14 rounded-2xl bg-pink-500/15 flex items-center justify-center mb-5">
+                        <i class="fas fa-chart-pie text-pink-400 text-xl"></i>
+                    </div>
+                    <h3 class="font-display font-semibold text-lg mb-2">Real-Time Analytics</h3>
+                    <p class="text-sm text-white/40 leading-relaxed">Track project progress, review submissions, manage payments, and measure ROI ΓÇö all from your company dashboard.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Use Cases -->
+    <section class="py-24 px-6 bg-darkCard/30">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="font-display font-bold text-4xl md:text-5xl mb-4">Popular <span class="gradient-text-orange">Use Cases</span></h2>
+                <p class="text-white/50 text-lg">See how companies are using Funngro to achieve real business goals.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="card-company flex gap-6">
+                    <div class="text-4xl">≡ƒô▒</div>
+                    <div>
+                        <h3 class="font-display font-semibold text-lg mb-2">Social Media Content</h3>
+                        <p class="text-sm text-white/40 leading-relaxed mb-3">Get authentic Gen-Z created reels, posts, and stories for your brand. Content that actually resonates with young audiences.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs bg-orange-500/10 text-orange-300 px-3 py-1 rounded-full">Instagram Reels</span>
+                            <span class="text-xs bg-orange-500/10 text-orange-300 px-3 py-1 rounded-full">YouTube Shorts</span>
+                            <span class="text-xs bg-orange-500/10 text-orange-300 px-3 py-1 rounded-full">Memes</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-company flex gap-6">
+                    <div class="text-4xl">≡ƒöì</div>
+                    <div>
+                        <h3 class="font-display font-semibold text-lg mb-2">Product Feedback & UXR</h3>
+                        <p class="text-sm text-white/40 leading-relaxed mb-3">Get honest feedback on your app, website, or product from your actual target demographic. No sugar-coated agency reports.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs bg-pink-500/10 text-pink-300 px-3 py-1 rounded-full">App Testing</span>
+                            <span class="text-xs bg-pink-500/10 text-pink-300 px-3 py-1 rounded-full">Surveys</span>
+                            <span class="text-xs bg-pink-500/10 text-pink-300 px-3 py-1 rounded-full">Focus Groups</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-company flex gap-6">
+                    <div class="text-4xl">≡ƒôú</div>
+                    <div>
+                        <h3 class="font-display font-semibold text-lg mb-2">Campus & School Ambassadors</h3>
+                        <p class="text-sm text-white/40 leading-relaxed mb-3">Build a network of teen brand ambassadors across schools and colleges. Word-of-mouth at scale with Gen-Z credibility.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs bg-orange-500/10 text-orange-300 px-3 py-1 rounded-full">Brand Advocacy</span>
+                            <span class="text-xs bg-orange-500/10 text-orange-300 px-3 py-1 rounded-full">Events</span>
+                            <span class="text-xs bg-orange-500/10 text-orange-300 px-3 py-1 rounded-full">Referrals</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-company flex gap-6">
+                    <div class="text-4xl">Γ£ì∩╕Å</div>
+                    <div>
+                        <h3 class="font-display font-semibold text-lg mb-2">Content & Copy Writing</h3>
+                        <p class="text-sm text-white/40 leading-relaxed mb-3">Blog posts, product descriptions, social copy ΓÇö written by teens who know how to speak to other teens. Fresh, authentic voice.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs bg-pink-500/10 text-pink-300 px-3 py-1 rounded-full">Blog Posts</span>
+                            <span class="text-xs bg-pink-500/10 text-pink-300 px-3 py-1 rounded-full">Product Copy</span>
+                            <span class="text-xs bg-pink-500/10 text-pink-300 px-3 py-1 rounded-full">Reviews</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How to Get Started - Companies -->
+    <section class="py-24 px-6">
+        <div class="max-w-3xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="font-display font-bold text-4xl md:text-5xl mb-4">Get Started in <span class="gradient-text-orange">3 Easy Steps</span></h2>
+            </div>
+
+            <div class="space-y-2">
+                <div class="card-company flex items-start gap-6">
+                    <div class="w-14 h-14 rounded-2xl bg-orange-500/20 flex items-center justify-center flex-shrink-0">
+                        <span class="font-display font-bold text-xl text-orange-300">1</span>
+                    </div>
+                    <div>
+                        <h3 class="font-display font-semibold text-lg mb-1">Post Your Project</h3>
+                        <p class="text-sm text-white/40 leading-relaxed">Describe what you need, set the budget and deadline. Our team reviews and approves it within 24 hours to ensure it's teen-appropriate.</p>
+                    </div>
+                </div>
+                <div class="step-connector-orange"></div>
+                <div class="card-company flex items-start gap-6">
+                    <div class="w-14 h-14 rounded-2xl bg-orange-500/20 flex items-center justify-center flex-shrink-0">
+                        <span class="font-display font-bold text-xl text-orange-300">2</span>
+                    </div>
+                    <div>
+                        <h3 class="font-display font-semibold text-lg mb-1">Review & Select Teens</h3>
+                        <p class="text-sm text-white/40 leading-relaxed">Browse applications from interested teens. Check their profiles, past work, and ratings. Select the best fit for your project.</p>
+                    </div>
+                </div>
+                <div class="step-connector-orange"></div>
+                <div class="card-company flex items-start gap-6">
+                    <div class="w-14 h-14 rounded-2xl bg-pink-500/20 flex items-center justify-center flex-shrink-0">
+                        <span class="font-display font-bold text-xl text-pink-300">3</span>
+                    </div>
+                    <div>
+                        <h3 class="font-display font-semibold text-lg mb-1">Get Results & Pay</h3>
+                        <p class="text-sm text-white/40 leading-relaxed">Receive deliverables, provide feedback, and approve. Payment is released only when you're satisfied. Rate the teen's work.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Company Testimonials -->
+    <section class="py-24 px-6 bg-darkCard/30">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="font-display font-bold text-4xl md:text-5xl mb-4">What <span class="gradient-text-orange">Companies Say</span></h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="testimonial-card" style="border-color: #3a2a1a;">
+                    <div class="flex items-center gap-1 mb-4">
+                        <i class="fas fa-star text-yellow-400 text-sm"></i>
+                        <i class="fas fa-star text-yellow-400 text-sm"></i>
+                        <i class="fas fa-star text-yellow-400 text-sm"></i>
+                        <i class="fas fa-star text-yellow-400 text-sm"></i>
+                        <i class="fas fa-star text-yellow-400 text-sm"></i>
+                    </div>
+                    <p class="text-white/60 text-sm leading-relaxed mb-6">"We got 50 authentic Instagram reels created by teens for less than what one agency would charge for 5. The engagement was 3x higher than our regular content."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-orange-500/30 flex items-center justify-center font-bold text-sm text-orange-300">M</div>
+                        <div>
+                            <div class="text-sm font-semibold">Marketing Head</div>
+                            <div class="text-xs text-white/30">D2C Fashion Brand</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card" style="border-color: #3a2a1a;">
+                    <div class="flex items-center gap-1 mb-4">
+                        <i class="fas fa-star text-yellow-400 text-sm"></i>
+                        <i class="fas fa-star text-yellow-400 text-sm"></i>
+                        <i class="fas fa-star text-yellow-400 text-sm"></i>
+                        <i class="fas fa-star text-yellow-400 text-sm"></i>
+                        <i class="fas fa-star text-yellow-400 text-sm"></i>
+                    </div>
+                    <p class="text-white/60 text-sm leading-relaxed mb-6">"The product feedback we received from Funngro teens was more actionable than our Γé╣5 lakh UX research project. Gen-Z doesn't sugar-coat ΓÇö and that's exactly what we needed."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-pink-500/30 flex items-center justify-center font-bold text-sm text-pink-300">P</div>
+                        <div>
+                            <div class="text-sm font-semibold">Product Manager</div>
+                            <div class="text-xs text-white/30">EdTech Startup</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card" style="border-color: #3a2a1a;">
+                    <div class="flex items-center gap-1 mb-4">
+                        <i class="fas fa-star text-yellow-400 text-sm"></i>
+                        <i class="fas fa-star text-yellow-400 text-sm"></i>
+                        <i class="fas fa-star text-yellow-400 text-sm"></i>
+                        <i class="fas fa-star text-yellow-400 text-sm"></i>
+                        <i class="fas fa-star text-yellow-400 text-sm"></i>
+                    </div>
+                    <p class="text-white/60 text-sm leading-relaxed mb-6">"Funngro is now a permanent part of our marketing mix. The teens we've worked with have become genuine brand advocates. The ROI is insane for the investment."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-orange-500/30 flex items-center justify-center font-bold text-sm text-orange-300">C</div>
+                        <div>
+                            <div class="text-sm font-semibold">CMO</div>
+                            <div class="text-xs text-white/30">FMCG Company</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Company Pricing -->
+    <section class="py-24 px-6">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="font-display font-bold text-4xl md:text-5xl mb-4">Simple, Transparent <span class="gradient-text-orange">Pricing</span></h2>
+                <p class="text-white/50 text-lg">Pay per project. No retainers. No hidden fees.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="card-company text-center">
+                    <div class="text-sm text-white/30 mb-2">Starter</div>
+                    <div class="font-display font-bold text-4xl mb-1">Γé╣2,000</div>
+                    <div class="text-sm text-white/40 mb-6">per project</div>
+                    <div class="space-y-3 text-left mb-8">
+                        <div class="flex items-center gap-2 text-sm text-white/50"><i class="fas fa-check text-orange-400 text-xs"></i> Up to 5 teen submissions</div>
+                        <div class="flex items-center gap-2 text-sm text-white/50"><i class="fas fa-check text-orange-400 text-xs"></i> Basic dashboard access</div>
+                        <div class="flex items-center gap-2 text-sm text-white/50"><i class="fas fa-check text-orange-400 text-xs"></i> Email support</div>
+                        <div class="flex items-center gap-2 text-sm text-white/30"><i class="fas fa-times text-white/20 text-xs"></i> Featured listings</div>
+                    </div>
+                    <button class="btn-outline w-full text-sm" style="border-color: #3a2a1a;">Get Started</button>
+                </div>
+
+                <div class="card-company text-center relative" style="border-color: #F97316; box-shadow: 0 0 40px rgba(249,115,22,0.15);">
+                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-gradient-to-r from-orange-500 to-pink-500 text-white text-xs font-bold px-4 py-1 rounded-full">Most Popular</div>
+                    <div class="text-sm text-orange-400 mb-2">Growth</div>
+                    <div class="font-display font-bold text-4xl mb-1">Γé╣5,000</div>
+                    <div class="text-sm text-white/40 mb-6">per project</div>
+                    <div class="space-y-3 text-left mb-8">
+                        <div class="flex items-center gap-2 text-sm text-white/50"><i class="fas fa-check text-orange-400 text-xs"></i> Up to 20 teen submissions</div>
+                        <div class="flex items-center gap-2 text-sm text-white/50"><i class="fas fa-check text-orange-400 text-xs"></i> Full analytics dashboard</div>
+                        <div class="flex items-center gap-2 text-sm text-white/50"><i class="fas fa-check text-orange-400 text-xs"></i> Priority support</div>
+                        <div class="flex items-center gap-2 text-sm text-white/50"><i class="fas fa-check text-orange-400 text-xs"></i> Featured listing</div>
+                    </div>
+                    <button class="w-full text-sm font-bold px-6 py-3 rounded-xl text-white" style="background: linear-gradient(135deg, #F97316, #EC4899);">Get Started</button>
+                </div>
+
+                <div class="card-company text-center">
+                    <div class="text-sm text-white/30 mb-2">Enterprise</div>
+                    <div class="font-display font-bold text-4xl mb-1">Custom</div>
+                    <div class="text-sm text-white/40 mb-6">tailored for you</div>
+                    <div class="space-y-3 text-left mb-8">
+                        <div class="flex items-center gap-2 text-sm text-white/50"><i class="fas fa-check text-pink-400 text-xs"></i> Unlimited submissions</div>
+                        <div class="flex items-center gap-2 text-sm text-white/50"><i class="fas fa-check text-pink-400 text-xs"></i> Dedicated account manager</div>
+                        <div class="flex items-center gap-2 text-sm text-white/50"><i class="fas fa-check text-pink-400 text-xs"></i> Custom integrations</div>
+                        <div class="flex items-center gap-2 text-sm text-white/50"><i class="fas fa-check text-pink-400 text-xs"></i> Brand ambassador programs</div>
+                    </div>
+                    <button class="btn-outline w-full text-sm" style="border-color: #3a2a1a;">Contact Sales</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Company CTA -->
+    <section class="py-24 px-6">
+        <div class="max-w-4xl mx-auto">
+            <div class="card-company relative overflow-hidden text-center" style="box-shadow: 0 0 60px rgba(249,115,22,0.15);">
+                <div class="absolute inset-0" style="background: linear-gradient(135deg, rgba(249,115,22,0.1), rgba(236,72,153,0.05));"></div>
+                <div class="relative">
+                    <div class="text-5xl mb-6">≡ƒñ¥</div>
+                    <h2 class="font-display font-bold text-4xl md:text-5xl mb-4">Ready to Tap Into <span class="gradient-text-orange">Gen-Z Power?</span></h2>
+                    <p class="text-white/50 text-lg max-w-xl mx-auto mb-8">Join 500+ companies already leveraging Funngro's teen workforce for authentic, cost-effective results.</p>
+                    <div class="flex flex-wrap justify-center gap-4">
+                        <button class="text-base font-bold px-8 py-4 rounded-xl text-white transition-all hover:-translate-y-1" style="background: linear-gradient(135deg, #F97316, #EC4899); box-shadow: 0 8px 30px rgba(249,115,22,0.3);" onmouseover="this.style.boxShadow='0 12px 40px rgba(249,115,22,0.5)'" onmouseout="this.style.boxShadow='0 8px 30px rgba(249,115,22,0.3)'">
+                            Post Your First Project <i class="fas fa-arrow-right ml-2"></i>
+                        </button>
+                        <button class="btn-outline text-base" style="border-color: #3a2a1a;">
+                            Schedule a Call
+                        </button>
+                    </div>
+                    <p class="text-xs text-white/20 mt-4">No commitment ΓÇó Free project review ΓÇó Setup in 24 hours</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- Footer -->
+<footer class="border-t border-darkBorder py-16 px-6">
+    <div class="max-w-7xl mx-auto">
+        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-10 mb-16">
+            <div class="col-span-2 lg:col-span-1">
+                <div class="flex items-center gap-2 mb-4">
+                    <div class="w-10 h-10 rounded-xl bg-neon flex items-center justify-center">
+                        <span class="text-dark font-display font-bold text-xl">F</span>
+                    </div>
+                    <span class="font-display font-bold text-xl">Funngro</span>
+                </div>
+                <p class="text-sm text-white/30 leading-relaxed mb-4">India's first platform connecting teens with real companies for real work, real skills, and real earnings.</p>
+                <div class="flex gap-3">
+                    <a href="#" class="w-9 h-9 rounded-lg bg-white/5 flex items-center justify-center hover:bg-neon/20 hover:text-neon transition-colors text-white/30"><i class="fab fa-instagram text-sm"></i></a>
+                    <a href="#" class="w-9 h-9 rounded-lg bg-white/5 flex items-center justify-center hover:bg-neon/20 hover:text-neon transition-colors text-white/30"><i class="fab fa-youtube text-sm"></i></a>
+                    <a href="#" class="w-9 h-9 rounded-lg bg-white/5 flex items-center justify-center hover:bg-neon/20 hover:text-neon transition-colors text-white/30"><i class="fab fa-linkedin-in text-sm"></i></a>
+                    <a href="#" class="w-9 h-9 rounded-lg bg-white/5 flex items-center justify-center hover:bg-neon/20 hover:text-neon transition-colors text-white/30"><i class="fab fa-twitter text-sm"></i></a>
+                </div>
+            </div>
+
+            <div>
+                <h4 class="font-semibold text-sm mb-4">For Teens</h4>
+                <ul class="space-y-2.5">
+                    <li><a href="#" onclick="showPage('teens')" class="text-sm text-white/30 hover:text-neon transition-colors">How It Works</a></li>
+                    <li><a href="#" class="text-sm text-white/30 hover:text-neon transition-colors">Browse Projects</a></li>
+                    <li><a href="#" class="text-sm text-white/30 hover:text-neon transition-colors">Success Stories</a></li>
+                    <li><a href="#" class="text-sm text-white/30 hover:text-neon transition-colors">Teen Safety</a></li>
+                    <li><a href="#" class="text-sm text-white/30 hover:text-neon transition-colors">Parent's Guide</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="font-semibold text-sm mb-4">For Companies</h4>
+                <ul class="space-y-2.5">
+                    <li><a href="#" onclick="showPage('companies')" class="text-sm text-white/30 hover:text-neon transition-colors">How It Works</a></li>
+                    <li><a href="#" class="text-sm text-white/30 hover:text-neon transition-colors">Post a Project</a></li>
+                    <li><a href="#" class="text-sm text-white/30 hover:text-neon transition-colors">Pricing</a></li>
+                    <li><a href="#" class="text-sm text-white/30 hover:text-neon transition-colors">Case Studies</a></li>
+                    <li><a href="#" class="text-sm text-white/30 hover:text-neon transition-colors">Enterprise</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="font-semibold text-sm mb-4">Company</h4>
+                <ul class="space-y-2.5">
+                    <li><a href="#" class="text-sm text-white/30 hover:text-neon transition-colors">About Us</a></li>
+                    <li><a href="#" class="text-sm text-white/30 hover:text-neon transition-colors">Shark Tank Journey</a></li>
+                    <li><a href="#" class="text-sm text-white/30 hover:text-neon transition-colors">Blog</a></li>
+                    <li><a href="#" class="text-sm text-white/30 hover:text-neon transition-colors">Careers</a></li>
+                    <li><a href="#" class="text-sm text-white/30 hover:text-neon transition-colors">Contact</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="font-semibold text-sm mb-4">Legal</h4>
+                <ul class="space-y-2.5">
+                    <li><a href="#" class="text-sm text-white/30 hover:text-neon transition-colors">Privacy Policy</a></li>
+                    <li><a href="#" class="text-sm text-white/30 hover:text-neon transition-colors">Terms of Service</a></li>
+                    <li><a href="#" class="text-sm text-white/30 hover:text-neon transition-colors">Child Safety Policy</a></li>
+                    <li><a href="#" class="text-sm text-white/30 hover:text-neon transition-colors">Refund Policy</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="border-t border-darkBorder pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+            <p class="text-xs text-white/20">┬⌐ 2024 Funngro. All rights reserved. Made with Γ¥ñ∩╕Å in India.</p>
+            <div class="flex items-center gap-4">
+                <span class="text-xs text-white/20 flex items-center gap-1"><i class="fas fa-shield-halved text-neon/40"></i> SSL Secured</span>
+                <span class="text-xs text-white/20 flex items-center gap-1"><i class="fas fa-lock text-neon/40"></i> PCI Compliant</span>
+                <span class="text-xs text-white/20 flex items-center gap-1"><i class="fas fa-child text-neon/40"></i> Child Safe</span>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Structured Data for SEO -->
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Funngro",
+    "url": "https://www.funngro.com",
+    "logo": "https://www.funngro.com/logo.png",
+    "description": "India's first platform connecting teens with real companies for real work experience and earnings.",
+    "sameAs": [
+        "https://www.instagram.com/funngro",
+        "https://www.youtube.com/funngro",
+        "https://www.linkedin.com/company/funngro",
+        "https://twitter.com/funngro"
+    ]
+}
+</script>
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Funngro",
+    "url": "https://www.funngro.com",
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://www.funngro.com/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+    }
+}
+</script>
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "Is Funngro safe for teenagers?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Absolutely. Funngro requires parental consent for all users under 18. All projects are reviewed for age-appropriateness, and every interaction is monitored."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How do teens get paid?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Payments are transferred directly to the teen's bank account via UPI or NEFT within 7 days of project completion and approval."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How much does it cost to join Funngro?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Funngro is completely free for teens to join. There are no hidden fees or charges."
+            }
+        }
+    ]
+}
+</script>
+
+<script>
+    // Page Navigation
+    function showPage(page) {
+        document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+        document.getElementById('page-' + page).classList.add('active');
+
+        document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+        const navEl = document.getElementById('nav-' + page);
+        if (navEl) navEl.classList.add('active');
+
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+
+        // Re-trigger animations
+        if (page === 'home') {
+            animateCounters();
+        }
+    }
+
+    // Mobile Menu
+    function toggleMobileMenu() {
+        const menu = document.getElementById('mobile-menu');
+        const overlay = document.getElementById('mobile-overlay');
+        menu.classList.toggle('open');
+        overlay.classList.toggle('hidden');
+        document.body.style.overflow = menu.classList.contains('open') ? 'hidden' : '';
+    }
+
+    // FAQ Toggle
+    function toggleFaq(item) {
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+    }
+
+    // Counter Animation
+    function animateCounters() {
+        const counters = document.querySelectorAll('#page-home .counter');
+        counters.forEach(counter => {
+            const target = parseInt(counter.getAttribute('data-target'));
+            const duration = 2000;
+            const step = target / (duration / 16);
+            let current = 0;
+
+            const timer = setInterval(() => {
+                current += step;
+                if (current >= target) {
+                    current = target;
+                    clearInterval(timer);
+                }
+                if (target >= 1000) {
+                    counter.textContent = Math.floor(current).toLocaleString('en-IN');
+                } else {
+                    counter.textContent = Math.floor(current);
+                }
+            }, 16);
+        });
+    }
+
+    // Navbar Scroll Effect
+    let lastScroll = 0;
+    window.addEventListener('scroll', () => {
+        const navbar = document.getElementById('navbar');
+        const currentScroll = window.pageYOffset;
+
+        if (currentScroll > 50) {
+            navbar.style.borderBottomColor = '#1E1E1E';
+            navbar.style.background = 'rgba(10,10,10,0.95)';
+        } else {
+            navbar.style.borderBottomColor = 'transparent';
+            navbar.style.background = 'rgba(10,10,10,0.8)';
+        }
+
+        lastScroll = currentScroll;
+    });
+
+    // Intersection Observer for scroll animations
+    const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.card-dark, .card-teen, .card-company, .testimonial-card').forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(20px)';
+        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(el);
+    });
+
+    // Initialize counters on load
+    window.addEventListener('load', () => {
+        setTimeout(animateCounters, 500);
+    });
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            if (href !== '#') {
+                e.preventDefault();
+                const target = document.querySelector(href);
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            }
+        });
+    });
+</script>
+
 </body>
 </html>
