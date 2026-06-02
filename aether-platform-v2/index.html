@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aether Platform - Serverless AI Runtime</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @keyframes fadeInSlide {
+            from {
+                opacity: 0;
+                transform: translateX(-8px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.5;
+            }
+        }
+
+        .animate-fade-in-slide {
+            animation: fadeInSlide 0.5s ease forwards;
+        }
+
+        .animate-pulse-custom {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .event-row {
+            opacity: 0;
+            transform: translateX(-8px);
+        }
+
+        .event-row.visible {
+            animation: fadeInSlide 0.5s ease forwards;
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-[#030303] text-zinc-100 font-sans antialiased selection:bg-emerald-500/30 selection:text-emerald-200">
+
+    <!-- Grid Background -->
+    <div class="fixed inset-0 overflow-hidden pointer-events-none">
+        <div class="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-emerald-600/10 blur-[120px] rounded-full opacity-50"></div>
+    </div>
+
+    <div class="relative z-10 flex flex-col min-h-screen">
+
+        <!-- Navbar -->
+        <header class="sticky top-0 z-[100] border-b border-white/[0.05] bg-black/60 backdrop-blur-xl">
+            <div class="max-w-7xl mx-auto px-6 h-14 flex items-center justify-between">
+                <div class="flex items-center gap-8">
+                    <div class="flex items-center gap-2.5 group cursor-pointer">
+                        <div class="h-7 w-7 rounded-lg bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center shadow-[0_0_15px_rgba(16,185,129,0.3)] group-hover:scale-105 transition-transform">
+                            <svg class="h-4 w-4 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" /></svg>
+                        </div>
+                        <span class="text-sm font-semibold tracking-tight">Aether</span>
+                    </div>
+
+                    <nav class="hidden md:flex items-center gap-6 text-[13px] font-medium text-zinc-400">
+                        <a href="#features" class="hover:text-white transition-colors">Features</a>
+                        <a href="#integrations" class="hover:text-white transition-colors">Integrations</a>
+                        <a href="#pricing" class="hover:text-white transition-colors">Pricing</a>
+                        <a href="#" class="hover:text-white transition-colors">Docs</a>
+                    </nav>
+                </div>
+
+                <div class="flex items-center gap-4">
+                    <button class="hidden sm:block text-[13px] font-medium text-zinc-400 hover:text-white transition-colors">Sign In</button>
+                    <button class="px-4 py-1.5 rounded-full bg-white text-black text-[13px] font-semibold hover:bg-zinc-200 transition-colors">Get Started</button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Hero Section -->
+        <section class="relative pt-24 pb-20 md:pt-32 md:pb-32 px-6">
+            <div class="max-w-7xl mx-auto text-center">
+                <!-- Badge -->
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.03] border border-white/[0.08] backdrop-blur-md">
+                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse-custom"></span>
+                    <span class="text-[10px] font-medium uppercase tracking-[0.15em] text-zinc-400">Introducing Aether Edge 2.0</span>
+                </div>
+
+                <h1 class="mt-8 text-5xl md:text-7xl font-bold tracking-tight text-white max-w-4xl mx-auto leading-[1.05]">
+                    The serverless runtime for <br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-b from-white to-zinc-500">autonomous AI pipelines</span>
+                </h1>
+
+                <p class="mt-8 text-zinc-400 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed font-light">
+                    Deploy dynamic agent loops and event-driven microservices globally.
+                    Scale to billions of instances instantly with built-in state.
+                </p>
+
+                <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <!-- Primary Button -->
+                    <button class="group relative px-6 py-3 rounded-full bg-white text-black font-medium text-sm transition-all hover:bg-zinc-200 flex items-center justify-center gap-2">
+                        Start Deploying Free
+                        <svg class="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+                    </button>
+
+                    <!-- Install Command -->
+                    <div id="installCommand" class="group cursor-pointer flex items-center gap-3 px-4 py-3 rounded-full bg-white/[0.03] border border-white/[0.08] hover:border-white/[0.15] transition-all font-mono text-xs text-zinc-400">
+                        <span class="text-emerald-400">$</span>
+                        <span>npm i @aether/core</span>
+                        <div class="ml-2 w-[1px] h-3 bg-white/10"></div>
+                        <span id="copyIcon" class="text-zinc-400 group-hover:text-white">
+                            <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" /></svg>
+                        </span>
+                        <span id="copiedText" class="text-emerald-400 hidden">Copied!</span>
+                    </div>
+                </div>
+
+                <!-- Terminal Mockup -->
+                <div class="mt-20 max-w-4xl mx-auto relative group">
+                    <div class="absolute inset-0 bg-emerald-500/10 blur-[100px] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-1000"></div>
+
+                    <div class="relative rounded-xl bg-black border border-white/[0.08] shadow-2xl overflow-hidden backdrop-blur-sm">
+                        <div class="flex items-center justify-between px-4 py-3 bg-white/[0.02] border-b border-white/[0.05]">
+                            <div class="flex gap-1.5">
+                                <div class="w-2.5 h-2.5 rounded-full bg-red-500/80"></div>
+                                <div class="w-2.5 h-2.5 rounded-full bg-yellow-500/80"></div>
+                                <div class="w-2.5 h-2.5 rounded-full bg-green-500/80"></div>
+                            </div>
+                            <div class="text-[10px] font-mono text-zinc-500 tracking-widest uppercase">aether-v2.0-logs</div>
+                            <div class="w-10"></div>
+                        </div>
+
+                        <div id="terminalEvents" class="p-6 font-mono text-[12px] text-left space-y-3 min-h-[240px]">
+                            <!-- Events will be populated by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bento Features Section -->
+        <section id="features" class="py-32 px-6">
+            <div class="max-w-7xl mx-auto">
+                <div class="flex flex-col md:flex-row justify-between items-end gap-6 mb-16">
+                    <div class="max-w-xl">
+                        <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4">
+                            Built for the next decade of <br> AI infrastructure.
+                        </h2>
+                        <p class="text-zinc-400 font-light">
+                            Standard queues weren't built for non-deterministic AI outputs. Aether handles the state so you can focus on the prompts.
+                        </p>
+                    </div>
+                    <button class="px-6 py-3 rounded-full bg-white/[0.03] border border-white/[0.08] text-zinc-300 font-medium text-sm transition-all hover:bg-white/[0.06] hover:text-white">
+                        View System Architecture
+                    </button>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 auto-rows-[240px]">
+                    <!-- Feature 1: Large Bento -->
+                    <div class="md:col-span-2 md:row-span-2 group relative rounded-3xl bg-white/[0.02] border border-white/[0.08] p-8 overflow-hidden hover:border-white/[0.15] transition-all">
+                        <div class="relative z-10 h-full flex flex-col">
+                            <div class="h-10 w-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 mb-6">
+                                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+                            </div>
+                            <h3 class="text-2xl font-bold text-white mb-3">Stateful Orchestration</h3>
+                            <p class="text-zinc-400 max-w-sm font-light leading-relaxed">
+                                Unlike standard Lambdas, Aether maintains memory between execution steps. Build complex multi-turn agent loops without an external database.
+                            </p>
+
+                            <div class="mt-auto pt-8 border-t border-white/[0.05]">
+                                <div class="flex flex-wrap gap-4">
+                                    <span class="text-[10px] font-semibold text-zinc-500 uppercase tracking-wider">Triggers</span>
+                                    <span class="text-[10px] font-semibold text-zinc-500 uppercase tracking-wider">Logic Nodes</span>
+                                    <span class="text-[10px] font-semibold text-zinc-500 uppercase tracking-wider">Memory Sync</span>
+                                    <span class="text-[10px] font-semibold text-zinc-500 uppercase tracking-wider">Edge Delivery</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-emerald-500/5 to-transparent"></div>
+                    </div>
+
+                    <!-- Feature 2 -->
+                    <div class="group rounded-3xl bg-white/[0.02] border border-white/[0.08] p-8 hover:border-white/[0.15] transition-all">
+                        <div class="h-10 w-10 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 mb-6">
+                            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">Zero-Trust Security</h3>
+                        <p class="text-sm text-zinc-400 font-light">Encrypted payloads and isolated V8 sandboxes for every step.</p>
+                    </div>
+
+                    <!-- Feature 3 -->
+                    <div class="group rounded-3xl bg-white/[0.02] border border-white/[0.08] p-8 hover:border-white/[0.15] transition-all">
+                        <div class="h-10 w-10 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 mb-6">
+                            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" /></svg>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">14ms Global Latency</h3>
+                        <p class="text-sm text-zinc-400 font-light">Distributed across 64 edge PoPs for sub-millisecond response.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section id="pricing" class="py-32 bg-white/[0.01] border-y border-white/[0.05]">
+            <div class="max-w-7xl mx-auto px-6 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-6 tracking-tight">Predictable pricing for scaling agents.</h2>
+
+                <!-- Pricing Toggle -->
+                <div class="flex justify-center mb-12">
+                    <div class="p-1 rounded-full bg-white/[0.03] border border-white/[0.08] flex items-center">
+                        <button id="monthlyBtn" class="px-6 py-2 rounded-full text-xs font-semibold transition-all bg-white text-black">
+                            Monthly
+                        </button>
+                        <button id="yearlyBtn" class="px-6 py-2 rounded-full text-xs font-semibold transition-all text-zinc-500 hover:text-zinc-300">
+                            Yearly <span class="ml-1 text-[9px] opacity-70">-20%</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Pricing Cards -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto text-left">
+                    <!-- Developer Tier -->
+                    <div class="relative p-8 rounded-3xl border bg-black border-white/[0.08]">
+                        <div class="text-sm font-semibold text-zinc-400 mb-2">Developer</div>
+                        <div class="text-4xl font-bold text-white mb-6">$0<span class="text-sm text-zinc-500 font-normal">/mo</span></div>
+                        <ul class="space-y-4 mb-8">
+                            <li class="flex items-center gap-3 text-sm text-zinc-400">
+                                <svg class="w-4 h-4 text-emerald-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                                100k requests
+                            </li>
+                            <li class="flex items-center gap-3 text-sm text-zinc-400">
+                                <svg class="w-4 h-4 text-emerald-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                                3 pipelines
+                            </li>
+                            <li class="flex items-center gap-3 text-sm text-zinc-400">
+                                <svg class="w-4 h-4 text-emerald-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                                Shared Edge
+                            </li>
+                        </ul>
+                        <button class="w-full py-3 rounded-xl text-sm font-bold transition-all bg-white/[0.05] text-white hover:bg-white/[0.1]">
+                            Get Started
+                        </button>
+                    </div>
+
+                    <!-- Pro Tier -->
+                    <div id="proTier" class="relative p-8 rounded-3xl border bg-white/[0.04] border-emerald-500/50 shadow-[0_0_40px_rgba(16,185,129,0.1)]">
+                        <div class="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-emerald-500 text-[10px] font-bold text-white tracking-widest uppercase">Most Popular</div>
+                        <div class="text-sm font-semibold text-zinc-400 mb-2">Pro</div>
+                        <div id="proPrice" class="text-4xl font-bold text-white mb-6">$49<span class="text-sm text-zinc-500 font-normal">/mo</span></div>
+                        <ul class="space-y-4 mb-8">
+                            <li class="flex items-center gap-3 text-sm text-zinc-400">
+                                <svg class="w-4 h-4 text-emerald-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                                5M requests
+                            </li>
+                            <li class="flex items-center gap-3 text-sm text-zinc-400">
+                                <svg class="w-4 h-4 text-emerald-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                                Unlimited pipelines
+                            </li>
+                            <li class="flex items-center gap-3 text-sm text-zinc-400">
+                                <svg class="w-4 h-4 text-emerald-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                                Dedicated Memory
+                            </li>
+                            <li class="flex items-center gap-3 text-sm text-zinc-400">
+                                <svg class="w-4 h-4 text-emerald-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                                Priority Support
+                            </li>
+                        </ul>
+                        <button class="w-full py-3 rounded-xl text-sm font-bold transition-all bg-emerald-600 text-white hover:bg-emerald-500">
+                            Get Started
+                        </button>
+                    </div>
+
+                    <!-- Business Tier -->
+                    <div class="relative p-8 rounded-3xl border bg-black border-white/[0.08]">
+                        <div class="text-sm font-semibold text-zinc-400 mb-2">Business</div>
+                        <div class="text-4xl font-bold text-white mb-6">Custom<span class="text-sm text-zinc-500 font-normal">/mo</span></div>
+                        <ul class="space-y-4 mb-8">
+                            <li class="flex items-center gap-3 text-sm text-zinc-400">
+                                <svg class="w-4 h-4 text-emerald-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                                Bespoke SLA
+                            </li>
+                            <li class="flex items-center gap-3 text-sm text-zinc-400">
+                                <svg class="w-4 h-4 text-emerald-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                                Bare Metal Clusters
+                            </li>
+                            <li class="flex items-center gap-3 text-sm text-zinc-400">
+                                <svg class="w-4 h-4 text-emerald-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                                White-glove setup
+                            </li>
+                            <li class="flex items-center gap-3 text-sm text-zinc-400">
+                                <svg class="w-4 h-4 text-emerald-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                                24/7 Phone Support
+                            </li>
+                        </ul>
+                        <button class="w-full py-3 rounded-xl text-sm font-bold transition-all bg-white/[0.05] text-white hover:bg-white/[0.1]">
+                            Contact Sales
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="py-20 px-6 border-t border-white/[0.05]">
+            <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+                <div class="flex items-center gap-2.5">
+                    <div class="h-6 w-6 rounded-md bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center">
+                        <svg class="h-3.5 w-3.5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" /></svg>
+                    </div>
+                    <span class="text-sm font-bold tracking-tight">Aether</span>
+                </div>
+
+                <div class="flex gap-8 text-[13px] text-zinc-500">
+                    <a href="#" class="hover:text-white transition-colors">GitHub</a>
+                    <a href="#" class="hover:text-white transition-colors">Twitter</a>
+                    <a href="#" class="hover:text-white transition-colors">Status</a>
+                    <a href="#" class="hover:text-white transition-colors">Privacy</a>
+                </div>
+
+                <div class="text-[13px] text-zinc-600">
+                    Copyright <span id="currentYear"></span> Aether Orchestrator Inc.
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    <script>
+        // Set dynamic year
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Initial events data
+        let events = [
+            { id: '1', time: '12:04:01', type: 'WEBHOOK', status: 'success', message: 'stripe.customer.subscription.created -> routing' },
+            { id: '2', time: '12:04:02', type: 'PIPELINE', status: 'info', message: 'Initialized state machine: "premium-onboarding"' },
+            { id: '3', time: '12:04:02', type: 'AGENT_NODE', status: 'pending', message: 'Synthesizing sequence with GPT-4o' }
+        ];
+
+        // Render events to terminal
+        function renderEvents() {
+            const container = document.getElementById('terminalEvents');
+            container.innerHTML = events.map((evt, index) => `
+                <div class="event-row flex gap-4" style="animation-delay: ${index * 0.1}s">
+                    <span class="text-zinc-600 shrink-0">${evt.time}</span>
+                    <span class="text-emerald-400 shrink-0">[${evt.type}]</span>
+                    <span class="text-zinc-300 italic">${evt.message}</span>
+                    <span class="ml-auto text-emerald-500/80 text-[10px]">success</span>
+                </div>
+            `).join('') + `
+                <div class="pt-2 flex items-center gap-2">
+                    <span class="w-1.5 h-3 bg-emerald-500 animate-pulse-custom"></span>
+                    <span class="text-zinc-500">Listening for events on us-east-1...</span>
+                </div>
+            `;
+
+            // Animate events with delay
+            setTimeout(() => {
+                document.querySelectorAll('.event-row').forEach((row, i) => {
+                    setTimeout(() => row.classList.add('visible'), i * 100);
+                });
+            }, 50);
+        }
+
+        // Update events periodically
+        function updateEvents() {
+            const now = new Date();
+            const timeStr = now.toTimeString().split(' ')[0];
+            const types = ['DATABASE', 'AGENT_NODE', 'WEBHOOK'];
+            const msgs = ['supabase.row.inserted', 'openai.embeddings.complete', 'redis.cache.updated'];
+
+            const newEvent = {
+                id: String(Date.now()),
+                time: timeStr,
+                type: types[Math.floor(Math.random() * 3)],
+                status: 'success',
+                message: msgs[Math.floor(Math.random() * 3)]
+            };
+
+            events = [newEvent, ...events.slice(0, 4)];
+            renderEvents();
+        }
+
+        // Initialize events
+        renderEvents();
+
+        // Update events every 4 seconds
+        setInterval(updateEvents, 4000);
+
+        // Copy to clipboard functionality
+        const installCommand = document.getElementById('installCommand');
+        const copyIcon = document.getElementById('copyIcon');
+        const copiedText = document.getElementById('copiedText');
+
+        installCommand.addEventListener('click', async () => {
+            try {
+                await navigator.clipboard.writeText('npm i @aether/core');
+                copyIcon.classList.add('hidden');
+                copiedText.classList.remove('hidden');
+                setTimeout(() => {
+                    copyIcon.classList.remove('hidden');
+                    copiedText.classList.add('hidden');
+                }, 2000);
+            } catch (err) {
+                console.error('Failed to copy:', err);
+            }
+        });
+
+        // Pricing toggle
+        const monthlyBtn = document.getElementById('monthlyBtn');
+        const yearlyBtn = document.getElementById('yearlyBtn');
+        const proPrice = document.getElementById('proPrice');
+        let isAnnual = true;
+
+        function updatePricing() {
+            if (isAnnual) {
+                yearlyBtn.className = 'px-6 py-2 rounded-full text-xs font-semibold transition-all bg-white text-black';
+                monthlyBtn.className = 'px-6 py-2 rounded-full text-xs font-semibold transition-all text-zinc-500 hover:text-zinc-300';
+                proPrice.innerHTML = '$49<span class="text-sm text-zinc-500 font-normal">/mo</span>';
+            } else {
+                monthlyBtn.className = 'px-6 py-2 rounded-full text-xs font-semibold transition-all bg-white text-black';
+                yearlyBtn.className = 'px-6 py-2 rounded-full text-xs font-semibold transition-all text-zinc-500 hover:text-zinc-300';
+                proPrice.innerHTML = '$59<span class="text-sm text-zinc-500 font-normal">/mo</span>';
+            }
+        }
+
+        monthlyBtn.addEventListener('click', () => {
+            isAnnual = false;
+            updatePricing();
+        });
+
+        yearlyBtn.addEventListener('click', () => {
+            isAnnual = true;
+            updatePricing();
+        });
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe sections for animation
+        document.querySelectorAll('section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(20px)';
+            section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(section);
+        });
+
+        // Initialize Lucide icons
+        if (typeof lucide !== 'undefined') {
+            lucide.createIcons();
+        }
+    </script>
+</body>
+</html>
