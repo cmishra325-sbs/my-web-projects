@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ardi Studio - Best Interior Designer in Lucknow | Interior Designing Services</title>
+<meta name="description" content="Ardi Studio is the best interior designer in Lucknow offering premium interior designing services for homes, offices, and commercial spaces. Transform your space with creative, modern, and functional designs.">
+<meta name="keywords" content="Interior Designer Lucknow, Best Interior Designer in Lucknow, Ardi Studio, Interior Designing Services, Home Interior Lucknow, Office Interior Design, Modular Kitchen Lucknow">
+<meta name="author" content="Ardi Studio">
+<meta property="og:title" content="Ardi Studio - Best Interior Designer in Lucknow">
+<meta property="og:description" content="Premium interior designing services in Lucknow. Transform your home and office with Ardi Studio.">
+<meta property="og:type" content="website">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.ardistudio.com/">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        'gold': '#c9a063',
+        'darkbg': '#0f0f0f',
+        'cream': '#f8f5f0'
+      },
+      fontFamily: {
+        'serif': ['Playfair Display', 'serif'],
+        'sans': ['Poppins', 'sans-serif']
+      }
+    }
+  }
+}
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+* { scroll-behavior: smooth; }
+body { font-family: 'Poppins', sans-serif; }
+h1,h2,h3,.serif { font-family: 'Playfair Display', serif; }
+
+.hero-bg {
+  background: linear-gradient(rgba(15,15,15,0.55), rgba(15,15,15,0.65)), url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1600&q=80');
+  background-size: cover;
+  background-position: center;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.fade-up { opacity: 0; }
+.fade-up.visible { animation: fadeUp 0.9s ease forwards; }
+
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+.float { animation: float 5s ease-in-out infinite; }
+
+.gold-line { height: 2px; background: linear-gradient(90deg, transparent, #c9a063, transparent); }
+
+.card-img { transition: transform 0.7s ease; }
+.card:hover .card-img { transform: scale(1.1); }
+
+.nav-link { position: relative; }
+.nav-link::after {
+  content:''; position:absolute; bottom:-4px; left:0; width:0; height:2px; background:#c9a063; transition:width 0.3s;
+}
+.nav-link:hover::after { width:100%; }
+
+.btn-gold { transition: all 0.4s ease; }
+.btn-gold:hover { box-shadow: 0 10px 30px rgba(201,160,99,0.4); transform: translateY(-3px); }
+
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: #0f0f0f; }
+::-webkit-scrollbar-thumb { background: #c9a063; border-radius: 5px; }
+
+.count-up { font-variant-numeric: tabular-nums; }
+</style>
+</head>
+<body class="bg-cream text-darkbg overflow-x-hidden">
+
+<!-- Header -->
+<header id="header" class="fixed top-0 w-full z-50 transition-all duration-500 bg-transparent">
+  <nav class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+    <a href="#home" class="text-2xl font-bold serif text-white tracking-wide" id="logo">ARDI<span class="text-gold">STUDIO</span></a>
+    <ul class="hidden md:flex items-center gap-8 text-white text-sm font-medium" id="navmenu">
+      <li><a href="#home" class="nav-link">Home</a></li>
+      <li><a href="#about" class="nav-link">About</a></li>
+      <li><a href="#services" class="nav-link">Services</a></li>
+      <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+      <li><a href="#testimonials" class="nav-link">Reviews</a></li>
+      <li><a href="#contact" class="nav-link">Contact</a></li>
+    </ul>
+    <a href="#contact" class="hidden md:inline-block bg-gold text-darkbg px-6 py-2 rounded-full text-sm font-semibold btn-gold">Get Quote</a>
+    <button id="hamburger" class="md:hidden text-white text-2xl">&#9776;</button>
+  </nav>
+  <div id="mobileMenu" class="hidden md:hidden bg-darkbg text-white px-6 py-4 flex-col gap-4">
+    <a href="#home" class="block py-2 mobile-link">Home</a>
+    <a href="#about" class="block py-2 mobile-link">About</a>
+    <a href="#services" class="block py-2 mobile-link">Services</a>
+    <a href="#portfolio" class="block py-2 mobile-link">Portfolio</a>
+    <a href="#testimonials" class="block py-2 mobile-link">Reviews</a>
+    <a href="#contact" class="block py-2 mobile-link">Contact</a>
+  </div>
+</header>
+
+<!-- Hero -->
+<section id="home" class="hero-bg min-h-screen flex items-center relative">
+  <div class="max-w-7xl mx-auto px-6 w-full">
+    <div class="max-w-2xl">
+      <p class="text-gold uppercase tracking-[4px] text-sm mb-4 fade-up">Best Interior Designer in Lucknow</p>
+      <h1 class="text-5xl md:text-7xl font-bold text-white leading-tight mb-6 fade-up">Designing Spaces That Inspire Living</h1>
+      <p class="text-gray-200 text-lg mb-8 fade-up">At Ardi Studio, we craft elegant, functional, and timeless interiors that reflect your personality. Transform your home or workspace into a masterpiece.</p>
+      <div class="flex flex-wrap gap-4 fade-up">
+        <a href="#portfolio" class="bg-gold text-darkbg px-8 py-3 rounded-full font-semibold btn-gold">View Our Work</a>
+        <a href="#contact" class="border border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-darkbg transition">Book Consultation</a>
+      </div>
+    </div>
+  </div>
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 text-white text-sm animate-bounce">Scroll Down ↓</div>
+</section>
+
+<!-- Stats -->
+<section class="bg-darkbg text-white py-16">
+  <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+    <div class="fade-up"><div class="text-4xl md:text-5xl font-bold text-gold count-up" data-target="350">0</div><p class="mt-2 text-gray-300">Projects Done</p></div>
+    <div class="fade-up"><div class="text-4xl md:text-5xl font-bold text-gold count-up" data-target="12">0</div><p class="mt-2 text-gray-300">Years Experience</p></div>
+    <div class="fade-up"><div class="text-4xl md:text-5xl font-bold text-gold count-up" data-target="300">0</div><p class="mt-2 text-gray-300">Happy Clients</p></div>
+    <div class="fade-up"><div class="text-4xl md:text-5xl font-bold text-gold count-up" data-target="25">0</div><p class="mt-2 text-gray-300">Awards Won</p></div>
+  </div>
+</section>
+
+<!-- About -->
+<section id="about" class="py-24 bg-cream">
+  <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+    <div class="relative fade-up">
+      <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=800&q=80" alt="Ardi Studio Interior Design Lucknow" class="rounded-2xl shadow-2xl w-full">
+      <div class="absolute -bottom-6 -right-6 bg-gold text-darkbg p-6 rounded-2xl shadow-xl float hidden sm:block">
+        <p class="text-3xl font-bold serif">12+</p>
+        <p class="text-sm">Years of Excellence</p>
+      </div>
+    </div>
+    <div class="fade-up">
+      <p class="text-gold uppercase tracking-[3px] text-sm mb-3">About Ardi Studio</p>
+      <h2 class="text-4xl md:text-5xl font-bold mb-6">Crafting Beautiful Interiors in Lucknow</h2>
+      <div class="gold-line w-24 mb-6"></div>
+      <p class="text-gray-600 mb-6">Ardi Studio is Lucknow's premier interior designing firm, dedicated to transforming ordinary spaces into extraordinary experiences. With a passion for detail and a commitment to quality, our team blends creativity with functionality to deliver designs that exceed expectations.</p>
+      <p class="text-gray-600 mb-8">From residential homes to commercial offices, we handle every project with personalized attention, ensuring your vision becomes a stunning reality.</p>
+      <div class="grid grid-cols-2 gap-4 mb-8">
+        <div class="flex items-center gap-2"><span class="text-gold text-xl">✓</span> Personalized Designs</div>
+        <div class="flex items-center gap-2"><span class="text-gold text-xl">✓</span> Premium Materials</div>
+        <div class="flex items-center gap-2"><span class="text-gold text-xl">✓</span> On-Time Delivery</div>
+        <div class="flex items-center gap-2"><span class="text-gold text-xl">✓</span> Affordable Pricing</div>
+      </div>
+      <a href="#contact" class="bg-darkbg text-white px-8 py-3 rounded-full font-semibold btn-gold inline-block">Let's Talk</a>
+    </div>
+  </div>
+</section>
+
+<!-- Services -->
+<section id="services" class="py-24 bg-darkbg text-white">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-16 fade-up">
+      <p class="text-gold uppercase tracking-[3px] text-sm mb-3">What We Offer</p>
+      <h2 class="text-4xl md:text-5xl font-bold">Our Premium Services</h2>
+      <div class="gold-line w-24 mx-auto mt-6"></div>
+    </div>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="bg-[#1a1a1a] p-8 rounded-2xl hover:bg-gold hover:text-darkbg transition-all duration-500 group fade-up">
+        <div class="text-5xl mb-4">🏠</div>
+        <h3 class="text-2xl font-bold mb-3">Residential Design</h3>
+        <p class="text-gray-400 group-hover:text-darkbg">Complete home interiors crafted to fit your lifestyle, from living rooms to bedrooms with elegant finishes.</p>
+      </div>
+      <div class="bg-[#1a1a1a] p-8 rounded-2xl hover:bg-gold hover:text-darkbg transition-all duration-500 group fade-up">
+        <div class="text-5xl mb-4">🏢</div>
+        <h3 class="text-2xl font-bold mb-3">Commercial Spaces</h3>
+        <p class="text-gray-400 group-hover:text-darkbg">Modern office and retail interiors designed to enhance productivity and impress your clients.</p>
+      </div>
+      <div class="bg-[#1a1a1a] p-8 rounded-2xl hover:bg-gold hover:text-darkbg transition-all duration-500 group fade-up">
+        <div class="text-5xl mb-4">🍽️</div>
+        <h3 class="text-2xl font-bold mb-3">Modular Kitchens</h3>
+        <p class="text-gray-400 group-hover:text-darkbg">Smart, stylish, and functional kitchen designs that combine beauty with practicality.</p>
+      </div>
+      <div class="bg-[#1a1a1a] p-8 rounded-2xl hover:bg-gold hover:text-darkbg transition-all duration-500 group fade-up">
+        <div class="text-5xl mb-4">💡</div>
+        <h3 class="text-2xl font-bold mb-3">Lighting & Decor</h3>
+        <p class="text-gray-400 group-hover:text-darkbg">Ambient lighting solutions and decorative elements that bring warmth and character to spaces.</p>
+      </div>
+      <div class="bg-[#1a1a1a] p-8 rounded-2xl hover:bg-gold hover:text-darkbg transition-all duration-500 group fade-up">
+        <div class="text-5xl mb-4">🛋️</div>
+        <h3 class="text-2xl font-bold mb-3">Custom Furniture</h3>
+        <p class="text-gray-400 group-hover:text-darkbg">Bespoke furniture pieces designed and crafted to perfectly complement your interiors.</p>
+      </div>
+      <div class="bg-[#1a1a1a] p-8 rounded-2xl hover:bg-gold hover:text-darkbg transition-all duration-500 group fade-up">
+        <div class="text-5xl mb-4">📐</div>
+        <h3 class="text-2xl font-bold mb-3">3D Visualization</h3>
+        <p class="text-gray-400 group-hover:text-darkbg">Realistic 3D renders so you can visualize your dream space before execution begins.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Portfolio -->
+<section id="portfolio" class="py-24 bg-cream">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-16 fade-up">
+      <p class="text-gold uppercase tracking-[3px] text-sm mb-3">Our Portfolio</p>
+      <h2 class="text-4xl md:text-5xl font-bold">Featured Projects</h2>
+      <div class="gold-line w-24 mx-auto mt-6"></div>
+    </div>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="card relative overflow-hidden rounded-2xl shadow-lg h-72 fade-up">
+        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=600&q=80" class="card-img w-full h-full object-cover" alt="Modern Living Room Interior Lucknow">
+        <div class="absolute inset-0 bg-gradient-to-t from-darkbg/80 to-transparent flex items-end p-6"><div><p class="text-gold text-sm">Residential</p><h3 class="text-white text-xl font-bold">Modern Living Room</h3></div></div>
+      </div>
+      <div class="card relative overflow-hidden rounded-2xl shadow-lg h-72 fade-up">
+        <img src="https://images.unsplash.com/photo-1556912173-3bb406ef7e77?auto=format&fit=crop&w=600&q=80" class="card-img w-full h-full object-cover" alt="Luxury Modular Kitchen Lucknow">
+        <div class="absolute inset-0 bg-gradient-to-t from-darkbg/80 to-transparent flex items-end p-6"><div><p class="text-gold text-sm">Kitchen</p><h3 class="text-white text-xl font-bold">Luxury Kitchen</h3></div></div>
+      </div>
+      <div class="card relative overflow-hidden rounded-2xl shadow-lg h-72 fade-up">
+        <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=600&q=80" class="card-img w-full h-full object-cover" alt="Office Interior Design Lucknow">
+        <div class="absolute inset-0 bg-gradient-to-t from-darkbg/80 to-transparent flex items-end p-6"><div><p class="text-gold text-sm">Commercial</p><h3 class="text-white text-xl font-bold">Office Workspace</h3></div></div>
+      </div>
+      <div class="card relative overflow-hidden rounded-2xl shadow-lg h-72 fade-up">
+        <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=600&q=80" class="card-img w-full h-full object-cover" alt="Elegant Bedroom Interior Lucknow">
+        <div class="absolute inset-0 bg-gradient-to-t from-darkbg/80 to-transparent flex items-end p-6"><div><p class="text-gold text-sm">Residential</p><h3 class="text-white text-xl font-bold">Elegant Bedroom</h3></div></div>
+      </div>
+      <div class="card relative overflow-hidden rounded-2xl shadow-lg h-72 fade-up">
+        <img src="https://images.unsplash.com/photo-1513161455079-7dc1de15ef3e?auto=format&fit=crop&w=600&q=80" class="card-img w-full h-full object-cover" alt="Dining Area Interior Lucknow">
+        <div class="absolute inset-0 bg-gradient-to-t from-darkbg/80 to-transparent flex items-end p-6"><div><p class="text-gold text-sm">Residential</p><h3 class="text-white text-xl font-bold">Dining Area</h3></div></div>
+      </div>
+      <div class="card relative overflow-hidden rounded-2xl shadow-lg h-72 fade-up">
+        <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=600&q=80" class="card-img w-full h-full object-cover" alt="Modern Bathroom Design Lucknow">
+        <div class="absolute inset-0 bg-gradient-to-t from-darkbg/80 to-transparent flex items-end p-6"><div><p class="text-gold text-sm">Bathroom</p><h3 class="text-white text-xl font-bold">Spa Bathroom</h3></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Process -->
+<section class="py-24 bg-darkbg text-white">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-16 fade-up">
+      <p class="text-gold uppercase tracking-[3px] text-sm mb-3">How We Work</p>
+      <h2 class="text-4xl md:text-5xl font-bold">Our Design Process</h2>
+      <div class="gold-line w-24 mx-auto mt-6"></div>
+    </div>
+    <div class="grid md:grid-cols-4 gap-8">
+      <div class="text-center fade-up"><div class="w-16 h-16 mx-auto bg-gold text-darkbg rounded-full flex items-center justify-center text-2xl font-bold mb-4">1</div><h3 class="text-xl font-bold mb-2">Consultation</h3><p class="text-gray-400">We understand your needs, style, and budget.</p></div>
+      <div class="text-center fade-up"><div class="w-16 h-16 mx-auto bg-gold text-darkbg rounded-full flex items-center justify-center text-2xl font-bold mb-4">2</div><h3 class="text-xl font-bold mb-2">Concept Design</h3><p class="text-gray-400">We create 3D visuals and detailed plans.</p></div>
+      <div class="text-center fade-up"><div class="w-16 h-16 mx-auto bg-gold text-darkbg rounded-full flex items-center justify-center text-2xl font-bold mb-4">3</div><h3 class="text-xl font-bold mb-2">Execution</h3><p class="text-gray-400">Skilled craftsmen bring designs to life.</p></div>
+      <div class="text-center fade-up"><div class="w-16 h-16 mx-auto bg-gold text-darkbg rounded-full flex items-center justify-center text-2xl font-bold mb-4">4</div><h3 class="text-xl font-bold mb-2">Handover</h3><p class="text-gray-400">We deliver your dream space on time.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section id="testimonials" class="py-24 bg-cream">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-16 fade-up">
+      <p class="text-gold uppercase tracking-[3px] text-sm mb-3">Testimonials</p>
+      <h2 class="text-4xl md:text-5xl font-bold">What Our Clients Say</h2>
+      <div class="gold-line w-24 mx-auto mt-6"></div>
+    </div>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="bg-white p-8 rounded-2xl shadow-lg fade-up">
+        <div class="text-gold text-xl mb-4">★★★★★</div>
+        <p class="text-gray-600 mb-6 italic">"Ardi Studio transformed our apartment beautifully. The team was professional, creative, and delivered exactly what we wanted. Highly recommend!"</p>
+        <div class="flex items-center gap-3"><div class="w-12 h-12 bg-gold rounded-full flex items-center justify-center font-bold text-darkbg">PS</div><div><p class="font-bold">Priya Sharma</p><p class="text-sm text-gray-500">Gomti Nagar, Lucknow</p></div></div>
+      </div>
+      <div class="bg-white p-8 rounded-2xl shadow-lg fade-up">
+        <div class="text-gold text-xl mb-4">★★★★★</div>
+        <p class="text-gray-600 mb-6 italic">"Best interior designer in Lucknow! They designed our office space within budget and on time. The result is stunning and very functional."</p>
+        <div class="flex items-center gap-3"><div class="w-12 h-12 bg-gold rounded-full flex items-center justify-center font-bold text-darkbg">RV</div><div><p class="font-bold">Rajeev Verma</p><p class="text-sm text-gray-500">Hazratganj, Lucknow</p></div></div>
+      </div>
+      <div class="bg-white p-8 rounded-2xl shadow-lg fade-up">
+        <div class="text-gold text-xl mb-4">★★★★★</div>
+        <p class="text-gray-600 mb-6 italic">"Our modular kitchen is a dream come true. Ardi Studio understood our needs perfectly and delivered exceptional quality. Thank you!"</p>
+        <div class="flex items-center gap-3"><div class="w-12 h-12 bg-gold rounded-full flex items-center justify-center font-bold text-darkbg">AK</div><div><p class="font-bold">Anjali Kapoor</p><p class="text-sm text-gray-500">Indira Nagar, Lucknow</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="py-24 bg-darkbg text-white">
+  <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12">
+    <div class="fade-up">
+      <p class="text-gold uppercase tracking-[3px] text-sm mb-3">Get In Touch</p>
+      <h2 class="text-4xl md:text-5xl font-bold mb-6">Let's Create Something Beautiful</h2>
+      <div class="gold-line w-24 mb-8"></div>
+      <p class="text-gray-400 mb-8">Ready to transform your space? Contact Ardi Studio today for a free consultation with the best interior designers in Lucknow.</p>
+      <div class="space-y-5">
+        <div class="flex items-start gap-4"><span class="text-gold text-2xl">📍</span><div><p class="font-bold">Visit Us</p><p class="text-gray-400">Lucknow, Uttar Pradesh, India</p></div></div>
+        <div class="flex items-start gap-4"><span class="text-gold text-2xl">📞</span><div><p class="font-bold">Call Us</p><p class="text-gray-400">+91 98765 43210</p></div></div>
+        <div class="flex items-start gap-4"><span class="text-gold text-2xl">✉️</span><div><p class="font-bold">Email Us</p><p class="text-gray-400">info@ardistudio.com</p></div></div>
+        <div class="flex items-start gap-4"><span class="text-gold text-2xl">🕒</span><div><p class="font-bold">Working Hours</p><p class="text-gray-400">Mon - Sat: 10:00 AM - 7:00 PM</p></div></div>
+      </div>
+    </div>
+    <div class="bg-[#1a1a1a] p-8 rounded-2xl fade-up">
+      <form id="contactForm" class="space-y-5">
+        <input type="text" placeholder="Your Name" required class="w-full bg-darkbg border border-gray-700 rounded-lg px-4 py-3 focus:border-gold outline-none text-white">
+        <input type="email" placeholder="Your Email" required class="w-full bg-darkbg border border-gray-700 rounded-lg px-4 py-3 focus:border-gold outline-none text-white">
+        <input type="tel" placeholder="Phone Number" required class="w-full bg-darkbg border border-gray-700 rounded-lg px-4 py-3 focus:border-gold outline-none text-white">
+        <select class="w-full bg-darkbg border border-gray-700 rounded-lg px-4 py-3 focus:border-gold outline-none text-white">
+          <option>Residential Design</option>
+          <option>Commercial Spaces</option>
+          <option>Modular Kitchen</option>
+          <option>Custom Furniture</option>
+          <option>Other</option>
+        </select>
+        <textarea placeholder="Your Message" rows="4" class="w-full bg-darkbg border border-gray-700 rounded-lg px-4 py-3 focus:border-gold outline-none text-white"></textarea>
+        <button type="submit" class="w-full bg-gold text-darkbg py-3 rounded-lg font-semibold btn-gold">Send Message</button>
+        <p id="formMsg" class="text-gold text-center hidden">Thank you! We'll get back to you soon.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-black text-gray-400 py-12">
+  <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-8">
+    <div>
+      <a href="#home" class="text-2xl font-bold serif text-white">ARDI<span class="text-gold">STUDIO</span></a>
+      <p class="mt-4 text-sm">Best interior designing services in Lucknow. Creating timeless and elegant spaces since 2012.</p>
+    </div>
+    <div>
+      <h4 class="text-white font-bold mb-4">Quick Links</h4>
+      <ul class="space-y-2 text-sm">
+        <li><a href="#about" class="hover:text-gold">About Us</a></li>
+        <li><a href="#services" class="hover:text-gold">Services</a></li>
+        <li><a href="#portfolio" class="hover:text-gold">Portfolio</a></li>
+        <li><a href="#contact" class="hover:text-gold">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="text-white font-bold mb-4">Services</h4>
+      <ul class="space-y-2 text-sm">
+        <li>Residential Design</li>
+        <li>Commercial Spaces</li>
+        <li>Modular Kitchens</li>
+        <li>Custom Furniture</li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="text-white font-bold mb-4">Follow Us</h4>
+      <div class="flex gap-3">
+        <a href="#" class="w-10 h-10 bg-gold/20 rounded-full flex items-center justify-center hover:bg-gold hover:text-darkbg transition">f</a>
+        <a href="#" class="w-10 h-10 bg-gold/20 rounded-full flex items-center justify-center hover:bg-gold hover:text-darkbg transition">in</a>
+        <a href="#" class="w-10 h-10 bg-gold/20 rounded-full flex items-center justify-center hover:bg-gold hover:text-darkbg transition">ig</a>
+      </div>
+    </div>
+  </div>
+  <div class="border-t border-gray-800 mt-10 pt-6 text-center text-sm">
+    © 2024 Ardi Studio - Best Interior Designer in Lucknow. All Rights Reserved.
+  </div>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Ardi Studio - Interior Designing Services",
+  "description": "Best Interior Designer in Lucknow offering premium interior designing services.",
+  "address": {"@type": "PostalAddress","addressLocality": "Lucknow","addressRegion": "Uttar Pradesh","addressCountry": "IN"},
+  "telephone": "+91 98765 43210",
+  "priceRange": "$$",
+  "openingHours": "Mo-Sa 10:00-19:00"
+}
+</script>
+
+<script>
+// Header scroll effect
+const header = document.getElementById('header');
+window.addEventListener('scroll', () => {
+  if(window.scrollY > 50){
+    header.classList.add('bg-darkbg','shadow-lg','py-0');
+  } else {
+    header.classList.remove('bg-darkbg','shadow-lg');
+  }
+});
+
+// Mobile menu
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
+hamburger.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+document.querySelectorAll('.mobile-link').forEach(l => l.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+
+// Scroll reveal
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+}, {threshold: 0.15});
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+// Count up
+const counters = document.querySelectorAll('.count-up');
+const counterObs = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      const el = entry.target;
+      const target = +el.dataset.target;
+      let count = 0;
+      const step = target/60;
+      const update = () => {
+        count += step;
+        if(count < target){ el.textContent = Math.ceil(count)+'+'; requestAnimationFrame(update); }
+        else el.textContent = target+'+';
+      };
+      update();
+      counterObs.unobserve(el);
+    }
+  });
+}, {threshold: 0.5});
+counters.forEach(c => counterObs.observe(c));
+
+// Form
+document.getElementById('contactForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  document.getElementById('formMsg').classList.remove('hidden');
+  this.reset();
+  setTimeout(()=>document.getElementById('formMsg').classList.add('hidden'),4000);
+});
+</script>
+</body>
+</html>
