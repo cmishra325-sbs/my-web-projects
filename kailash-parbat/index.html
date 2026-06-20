@@ -4,51 +4,53 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
   <title>KAILASH PARBAT — Official Website</title>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&display=swap" rel="stylesheet"/>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/lucide@latest"></script>
-  <script>tailwind.config={theme:{extend:{fontFamily:{sans:['Outfit','sans-serif']}}}}</script>
+  <script>tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','sans-serif']}}}}</script>
   <style>
     *{margin:0;padding:0;box-sizing:border-box}
+    .hero-bg{background:linear-gradient(135deg,rgba(0,0,0,0.85),rgba(0,0,0,0.4)),url('https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=1920') center/cover no-repeat}
+    .card-hover{transition:all .3s ease}
+    .card-hover:hover{transform:translateY(-8px);box-shadow:0 25px 50px rgba(0,0,0,0.15)}
+    .gradient-text{background:linear-gradient(135deg,#f97316,#ef4444);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+    .stat-box{background:linear-gradient(135deg,rgba(249,115,22,0.1),rgba(239,68,68,0.05));border:1px solid rgba(249,115,22,0.2)}
     html{scroll-behavior:smooth}
-    .glass{background:rgba(255,255,255,0.12);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.15);border-radius:1.5rem}
-    .glass-dark{background:rgba(0,0,0,0.3);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.08);border-radius:1.5rem}
-    .hero-full{background:linear-gradient(135deg,rgba(6,78,59,0.9),rgba(16,185,129,0.7)),url('https://images.pexels.com/photos/3201584/pexels-photo-3201584.jpeg?auto=compress&cs=tinysrgb&w=1920') center/cover no-repeat}
-    .mesh-1{position:fixed;width:500px;height:500px;background:radial-gradient(circle,rgba(16,185,129,0.15),transparent 70%);border-radius:50%;top:-100px;right:-100px;pointer-events:none;z-index:0}
-    .mesh-2{position:fixed;width:400px;height:400px;background:radial-gradient(circle,rgba(59,130,246,0.1),transparent 70%);border-radius:50%;bottom:10%;left:-100px;pointer-events:none;z-index:0}
   </style>
 </head>
-<body class="bg-gray-950 text-white font-sans min-h-screen">
-<div class="mesh-1"></div>
-<div class="mesh-2"></div>
+<body class="bg-gray-950 text-white font-sans">
 
 <!-- NAV -->
-<nav class="fixed top-0 w-full z-50 glass-dark mx-4 mt-4" style="width:calc(100% - 2rem)">
-  <div class="max-w-7xl mx-auto px-6 h-14 flex items-center justify-between">
-    <span class="text-lg font-bold">KAILASH PARBAT</span>
-    <div class="hidden md:flex items-center gap-6 text-sm text-white/60">
+<nav class="fixed top-0 w-full z-50 bg-gray-950/90 backdrop-blur-xl border-b border-white/5">
+  <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+    <span class="text-xl font-black tracking-tight">KAILASH PARBAT</span>
+    <div class="hidden md:flex items-center gap-8 text-sm text-gray-400">
       <a href="#about" class="hover:text-white transition">About</a>
       <a href="#services" class="hover:text-white transition">Services</a>
       <a href="#contact" class="hover:text-white transition">Contact</a>
-      <a href="tel:09274555935" class="px-5 py-2 bg-emerald-500/90 text-white rounded-full font-medium hover:bg-emerald-400 transition">Call Now</a>
+      <a href="tel:09274555935" class="px-5 py-2 bg-orange-500 text-white rounded-full font-semibold hover:bg-orange-600 transition">Call Now</a>
     </div>
   </div>
 </nav>
 
 <!-- HERO -->
-<section class="hero-full min-h-screen flex items-center justify-center relative">
-  <div class="text-center px-6 relative z-10">
-    <div class="glass inline-block px-6 py-2 mb-8">
-      <span class="text-emerald-300 text-sm font-medium">🍽️ restaurant in Rajkot</span>
+<section class="hero-bg min-h-screen flex items-center relative">
+  <div class="max-w-7xl mx-auto px-6 py-32 relative z-10">
+    <div class="flex items-center gap-3 mb-6">
+      <div class="w-12 h-12 rounded-full bg-orange-500/20 flex items-center justify-center"><span class="text-2xl">🍽️</span></div>
+      <span class="text-orange-400 text-sm font-semibold uppercase tracking-widest">restaurant</span>
     </div>
-    <h1 class="text-6xl md:text-8xl font-black mb-6 leading-none">KAILASH PARBAT</h1>
-    <p class="text-2xl text-white/70 font-light mb-6 max-w-xl mx-auto">Delicious Food, Unforgettable Experience</p>
-    <div class="flex items-center justify-center gap-4 mb-10">
-      <div class="glass px-4 py-2 inline-flex items-center gap-2"><span class="text-yellow-400 font-bold">★ 4.7</span><span class="text-white/50 text-sm">(743) reviews</span></div>
+    <h1 class="text-6xl md:text-8xl font-black leading-none mb-6 max-w-4xl">KAILASH PARBAT</h1>
+    <p class="text-2xl text-gray-300 font-light mb-4 max-w-2xl">Delicious Food, Unforgettable Experience</p>
+    <div class="flex items-center gap-4 mb-8">
+      <span class="text-yellow-400 text-lg font-bold">★ 4.7</span>
+      <span class="text-gray-500">(743) reviews</span>
+      <span class="text-gray-700">|</span>
+      <span class="text-gray-400">📍 Rajkot</span>
     </div>
-    <div class="flex justify-center gap-4">
-      <a href="tel:09274555935" class="px-10 py-4 bg-emerald-500 text-white rounded-full font-bold text-lg hover:bg-emerald-400 transition hover:scale-105">📞 092745 55935</a>
-      <a href="#services" class="glass px-10 py-4 text-white rounded-full font-semibold hover:bg-white/20 transition">Explore</a>
+    <div class="flex gap-4">
+      <a href="tel:09274555935" class="px-8 py-4 bg-orange-500 text-white rounded-full font-bold text-lg hover:bg-orange-600 transition hover:scale-105">📞 092745 55935</a>
+      <a href="#services" class="px-8 py-4 border border-white/20 rounded-full text-white font-semibold hover:bg-white/10 transition">Explore Services</a>
     </div>
   </div>
   <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce text-white/30">
@@ -57,114 +59,127 @@
 </section>
 
 <!-- STATS -->
-<section class="py-16 relative z-10">
-  <div class="max-w-5xl mx-auto px-6">
-    <div class="glass p-8 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-      <div><div class="text-3xl font-black text-emerald-400 mb-1">4.7★</div><div class="text-white/40 text-sm">Rating</div></div>
-      <div><div class="text-3xl font-black text-emerald-400 mb-1">(743)+</div><div class="text-white/40 text-sm">Reviews</div></div>
-      <div><div class="text-3xl font-black text-emerald-400 mb-1">5+</div><div class="text-white/40 text-sm">Years</div></div>
-      <div><div class="text-3xl font-black text-emerald-400 mb-1">100%</div><div class="text-white/40 text-sm">Quality</div></div>
+<section class="py-16 border-y border-white/5">
+  <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-6">
+    <div class="stat-box rounded-2xl p-6 text-center">
+      <div class="text-4xl font-black gradient-text mb-1">4.7★</div>
+      <div class="text-gray-500 text-sm">Rating</div>
+    </div>
+    <div class="stat-box rounded-2xl p-6 text-center">
+      <div class="text-4xl font-black gradient-text mb-1">(743)+</div>
+      <div class="text-gray-500 text-sm">Reviews</div>
+    </div>
+    <div class="stat-box rounded-2xl p-6 text-center">
+      <div class="text-4xl font-black gradient-text mb-1">5+</div>
+      <div class="text-gray-500 text-sm">Years</div>
+    </div>
+    <div class="stat-box rounded-2xl p-6 text-center">
+      <div class="text-4xl font-black gradient-text mb-1">100%</div>
+      <div class="text-gray-500 text-sm">Quality</div>
     </div>
   </div>
 </section>
 
 <!-- ABOUT -->
-<section id="about" class="py-24 relative z-10">
-  <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
-    <div class="glass p-4">
-      <img src="https://images.pexels.com/photos/3201584/pexels-photo-3201584.jpeg?auto=compress&cs=tinysrgb&w=1920" alt="KAILASH PARBAT" class="rounded-2xl w-full aspect-square object-cover"/>
-    </div>
+<section id="about" class="py-24">
+  <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
     <div>
-      <span class="text-emerald-400 text-sm font-bold uppercase tracking-widest">About Us</span>
-      <h2 class="text-4xl font-bold mt-3 mb-6">KAILASH PARBAT</h2>
-      <p class="text-white/60 leading-relaxed mb-6">Located in Rajkot, KAILASH PARBAT is the premier destination for restaurant. Our 4.7-star rating from (743) customers reflects our unwavering commitment to excellence.</p>
-      <p class="text-white/50 leading-relaxed mb-8">We combine innovation with tradition to deliver exceptional experiences every time.</p>
-      <div class="flex flex-wrap gap-3"><span class="glass px-4 py-2 text-sm text-white/80">Dine-In</span><span class="glass px-4 py-2 text-sm text-white/80">Takeaway</span><span class="glass px-4 py-2 text-sm text-white/80">Catering</span></div>
+      <span class="text-orange-500 text-sm font-bold uppercase tracking-widest mb-4 block">About Us</span>
+      <h2 class="text-5xl font-black mb-6 leading-tight">Welcome to<br/><span class="gradient-text">KAILASH PARBAT</span></h2>
+      <p class="text-gray-400 leading-relaxed mb-6">Located in Rajkot, KAILASH PARBAT delivers exceptional restaurant services. With 4.7 stars from (743) Google reviews, we're committed to excellence.</p>
+      <p class="text-gray-500 leading-relaxed mb-8">We build lasting relationships through quality, transparency, and genuine care for every customer.</p>
+      <div class="flex flex-wrap gap-3"><span class="px-4 py-2 bg-white/5 border border-white/10 rounded-full text-sm text-gray-300">Dine-In</span><span class="px-4 py-2 bg-white/5 border border-white/10 rounded-full text-sm text-gray-300">Takeaway</span><span class="px-4 py-2 bg-white/5 border border-white/10 rounded-full text-sm text-gray-300">Catering</span></div>
+    </div>
+    <div class="relative">
+      <img src="https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=1920" alt="KAILASH PARBAT" class="rounded-3xl w-full aspect-square object-cover shadow-2xl"/>
+      <div class="absolute -bottom-6 -left-6 bg-orange-500 rounded-2xl p-5 shadow-xl">
+        <div class="text-3xl font-black">4.7★</div>
+        <div class="text-sm text-orange-100">Google Rating</div>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- SERVICES -->
-<section id="services" class="py-24 relative z-10">
+<section id="services" class="py-24 bg-gray-900/50">
   <div class="max-w-7xl mx-auto px-6">
     <div class="text-center mb-16">
-      <span class="text-emerald-400 text-sm font-bold uppercase tracking-widest">Services</span>
-      <h2 class="text-4xl font-bold mt-3">What We Offer</h2>
+      <span class="text-orange-500 text-sm font-bold uppercase tracking-widest">What We Offer</span>
+      <h2 class="text-5xl font-black mt-3">Our Services</h2>
     </div>
     <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
       
-      <div class="glass p-7 hover:bg-white/15 transition-all hover:-translate-y-1">
-        <div class="w-14 h-14 bg-emerald-500/15 rounded-2xl flex items-center justify-center mb-5">
-          <i data-lucide="utensils" class="w-7 h-7 text-emerald-400"></i>
+      <div class="bg-gray-900 border border-white/5 rounded-3xl p-8 card-hover">
+        <div class="w-14 h-14 bg-orange-500/10 rounded-2xl flex items-center justify-center mb-5">
+          <i data-lucide="utensils" class="w-7 h-7 text-orange-400"></i>
         </div>
-        <h3 class="font-bold text-lg mb-2">Fresh Ingredients</h3>
-        <p class="text-white/50 text-sm leading-relaxed">Locally sourced, farm-fresh ingredients in every dish</p>
+        <h3 class="text-lg font-bold mb-2">Fresh Ingredients</h3>
+        <p class="text-gray-500 text-sm leading-relaxed">Locally sourced, farm-fresh ingredients in every dish</p>
       </div>
-      <div class="glass p-7 hover:bg-white/15 transition-all hover:-translate-y-1">
-        <div class="w-14 h-14 bg-emerald-500/15 rounded-2xl flex items-center justify-center mb-5">
-          <i data-lucide="chef-hat" class="w-7 h-7 text-emerald-400"></i>
+      <div class="bg-gray-900 border border-white/5 rounded-3xl p-8 card-hover">
+        <div class="w-14 h-14 bg-orange-500/10 rounded-2xl flex items-center justify-center mb-5">
+          <i data-lucide="chef-hat" class="w-7 h-7 text-orange-400"></i>
         </div>
-        <h3 class="font-bold text-lg mb-2">Expert Chefs</h3>
-        <p class="text-white/50 text-sm leading-relaxed">Our chefs bring years of culinary excellence to your plate</p>
+        <h3 class="text-lg font-bold mb-2">Expert Chefs</h3>
+        <p class="text-gray-500 text-sm leading-relaxed">Our chefs bring years of culinary excellence to your plate</p>
       </div>
-      <div class="glass p-7 hover:bg-white/15 transition-all hover:-translate-y-1">
-        <div class="w-14 h-14 bg-emerald-500/15 rounded-2xl flex items-center justify-center mb-5">
-          <i data-lucide="flame" class="w-7 h-7 text-emerald-400"></i>
+      <div class="bg-gray-900 border border-white/5 rounded-3xl p-8 card-hover">
+        <div class="w-14 h-14 bg-orange-500/10 rounded-2xl flex items-center justify-center mb-5">
+          <i data-lucide="flame" class="w-7 h-7 text-orange-400"></i>
         </div>
-        <h3 class="font-bold text-lg mb-2">Cozy Ambiance</h3>
-        <p class="text-white/50 text-sm leading-relaxed">Perfect setting for family dinners and celebrations</p>
+        <h3 class="text-lg font-bold mb-2">Cozy Ambiance</h3>
+        <p class="text-gray-500 text-sm leading-relaxed">Perfect setting for family dinners and celebrations</p>
       </div>
-      <div class="glass p-7 hover:bg-white/15 transition-all hover:-translate-y-1">
-        <div class="w-14 h-14 bg-emerald-500/15 rounded-2xl flex items-center justify-center mb-5">
-          <i data-lucide="star" class="w-7 h-7 text-emerald-400"></i>
+      <div class="bg-gray-900 border border-white/5 rounded-3xl p-8 card-hover">
+        <div class="w-14 h-14 bg-orange-500/10 rounded-2xl flex items-center justify-center mb-5">
+          <i data-lucide="star" class="w-7 h-7 text-orange-400"></i>
         </div>
-        <h3 class="font-bold text-lg mb-2">5-Star Service</h3>
-        <p class="text-white/50 text-sm leading-relaxed">Rated among the best dining experiences in the city</p>
+        <h3 class="text-lg font-bold mb-2">5-Star Service</h3>
+        <p class="text-gray-500 text-sm leading-relaxed">Rated among the best dining experiences in the city</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- CTA -->
-<section class="py-20 relative z-10">
-  <div class="max-w-4xl mx-auto px-6">
-    <div class="glass p-12 text-center bg-gradient-to-r from-emerald-500/20 to-teal-500/20">
-      <h2 class="text-4xl font-bold mb-4">Ready to Connect?</h2>
-      <p class="text-white/60 text-lg mb-8">Let KAILASH PARBAT serve you the best restaurant in Rajkot.</p>
-      <a href="tel:09274555935" class="inline-block px-10 py-4 bg-emerald-500 text-white rounded-full font-bold hover:bg-emerald-400 transition hover:scale-105">📞 092745 55935</a>
-    </div>
+<section class="py-20 bg-gradient-to-r from-orange-500 to-red-500">
+  <div class="max-w-4xl mx-auto px-6 text-center">
+    <h2 class="text-5xl font-black mb-4">Ready to Get Started?</h2>
+    <p class="text-white/80 text-lg mb-8">Contact KAILASH PARBAT today. We'd love to serve you!</p>
+    <a href="tel:09274555935" class="inline-block px-10 py-4 bg-white text-gray-900 rounded-full font-bold text-lg hover:shadow-2xl transition hover:scale-105">📞 Call 092745 55935</a>
   </div>
 </section>
 
 <!-- CONTACT -->
-<section id="contact" class="py-24 relative z-10">
+<section id="contact" class="py-24">
   <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12">
     <div>
-      <span class="text-emerald-400 text-sm font-bold uppercase tracking-widest mb-4 block">Contact</span>
-      <h2 class="text-4xl font-bold mb-8">Get in Touch</h2>
-      <div class="space-y-5">
-        <div class="flex gap-4 items-start"><div class="glass w-10 h-10 flex items-center justify-center flex-shrink-0"><i data-lucide="map-pin" class="w-5 h-5 text-emerald-400"></i></div><p class="text-sm text-white/50 mt-2">The Adelphi, 102- 103, Kalavad Rd, near AG Chowk Flyover Bridge</p></div>
-        <div class="flex gap-4 items-start"><div class="glass w-10 h-10 flex items-center justify-center flex-shrink-0"><i data-lucide="phone" class="w-5 h-5 text-emerald-400"></i></div><a href="tel:09274555935" class="text-sm text-white/50 mt-2 hover:text-emerald-400 transition">092745 55935</a></div>
-        <div class="flex gap-4 items-start"><div class="glass w-10 h-10 flex items-center justify-center flex-shrink-0"><i data-lucide="clock" class="w-5 h-5 text-emerald-400"></i></div><p class="text-sm text-white/50 mt-2">Mon–Sun: 9AM–10PM</p></div>
+      <span class="text-orange-500 text-sm font-bold uppercase tracking-widest mb-4 block">Get in Touch</span>
+      <h2 class="text-5xl font-black mb-8">Contact Us</h2>
+      <div class="space-y-6">
+        <div class="flex gap-4"><div class="w-12 h-12 bg-orange-500/10 rounded-xl flex items-center justify-center flex-shrink-0"><i data-lucide="map-pin" class="w-6 h-6 text-orange-400"></i></div><div><h4 class="font-semibold mb-1">Address</h4><p class="text-gray-500 text-sm">The Adelphi, 102- 103, Kalavad Rd, near AG Chowk Flyover Bridge</p></div></div>
+        <div class="flex gap-4"><div class="w-12 h-12 bg-orange-500/10 rounded-xl flex items-center justify-center flex-shrink-0"><i data-lucide="phone" class="w-6 h-6 text-orange-400"></i></div><div><h4 class="font-semibold mb-1">Phone</h4><a href="tel:09274555935" class="text-gray-500 text-sm hover:text-orange-400 transition">092745 55935</a></div></div>
+        <div class="flex gap-4"><div class="w-12 h-12 bg-orange-500/10 rounded-xl flex items-center justify-center flex-shrink-0"><i data-lucide="clock" class="w-6 h-6 text-orange-400"></i></div><div><h4 class="font-semibold mb-1">Hours</h4><p class="text-gray-500 text-sm">Mon–Sun: 9AM–10PM</p></div></div>
       </div>
     </div>
-    <div class="glass p-8">
-      <form class="space-y-4" onsubmit="event.preventDefault();alert('Thank you!');">
-        <input type="text" placeholder="Name" class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-white/30 focus:ring-2 focus:ring-emerald-500 outline-none text-sm"/>
-        <input type="tel" placeholder="Phone" class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-white/30 focus:ring-2 focus:ring-emerald-500 outline-none text-sm"/>
-        <textarea placeholder="Message" rows="4" class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-white/30 focus:ring-2 focus:ring-emerald-500 outline-none resize-none text-sm"></textarea>
-        <button type="submit" class="w-full py-3 bg-emerald-500 text-white rounded-xl font-bold hover:bg-emerald-400 transition">Send Message</button>
+    <div class="bg-gray-900 border border-white/5 rounded-3xl p-8">
+      <h3 class="text-xl font-bold mb-6">Send a Message</h3>
+      <form class="space-y-4" onsubmit="event.preventDefault();alert('Thank you! We will contact you soon.');">
+        <input type="text" placeholder="Your Name" class="w-full px-4 py-3 bg-gray-800 border border-white/10 rounded-xl text-white placeholder-gray-500 focus:ring-2 focus:ring-orange-500 outline-none"/>
+        <input type="tel" placeholder="Phone" class="w-full px-4 py-3 bg-gray-800 border border-white/10 rounded-xl text-white placeholder-gray-500 focus:ring-2 focus:ring-orange-500 outline-none"/>
+        <textarea placeholder="Message" rows="4" class="w-full px-4 py-3 bg-gray-800 border border-white/10 rounded-xl text-white placeholder-gray-500 focus:ring-2 focus:ring-orange-500 outline-none resize-none"></textarea>
+        <button type="submit" class="w-full py-3 bg-orange-500 text-white rounded-xl font-bold hover:bg-orange-600 transition">Send Message</button>
       </form>
     </div>
   </div>
 </section>
 
 <!-- FOOTER -->
-<footer class="py-8 border-t border-white/5 relative z-10">
-  <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-white/30">
-    <span class="font-bold text-white/60">KAILASH PARBAT</span>
-    <span>📍 Rajkot · 📞 092745 55935</span>
-    <span>© 2026 KAILASH PARBAT</span>
+<footer class="py-10 border-t border-white/5">
+  <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
+    <span class="font-bold text-lg">KAILASH PARBAT</span>
+    <div class="flex gap-6 text-gray-500 text-sm"><span>📍 Rajkot</span><span>📞 092745 55935</span></div>
+    <span class="text-gray-600 text-xs">© 2026 KAILASH PARBAT. All rights reserved.</span>
   </div>
 </footer>
 
